@@ -9,14 +9,35 @@
 
     <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <Div id="teamWrapper" style="display: none">
+    <Div id="teamWrapper" style="display: none" class="clearfix">
       <%= f.label :team_name, 'Team Name' %>
       <%= f.text_field :team_name %><br />
       <%= f.fields_for :secondary_users do |sf| %>
-          <%= sf.label :name, 'Name' %>
+          <div class="control-group">
+          <%= sf.label :name, 'Name',:class=>"control-label" %>
+            <div class="controls">
           <%= sf.text_field :name %>
-          <%= sf.label :email, 'Email' %>
+              </div>
+            </div>
+          <div class="control-group">
+          <%= sf.label :email, 'Email',:class=>"control-label" %>
+            <div class="controls">
           <%= sf.text_field :email %><br />
+              </div>
+          </div>
+          <div class="control-group">
+            <%= sf.label :name, 'Name',:class=>"control-label" %>
+            <div class="controls">
+              <%= sf.text_field :name %>
+            </div>
+          </div>
+          <div class="control-group">
+            <%= sf.label :email, 'Email',:class=>"control-label" %>
+            <div class="controls">
+              <%= sf.text_field :email %><br />
+            </div>
+          </div>
+
       <% end %>
     </Div> <br/>
 
@@ -34,3 +55,4 @@
         });
     </script>
 <%end%>
+
