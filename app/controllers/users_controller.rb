@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
 
   end
@@ -14,7 +13,12 @@ class UsersController < ApplicationController
     @user = User.create(params[:user])
     @user.save
     @user.secondary_users.build(params[:user][:secondary_user])
-    redirect_to users_path
+    if simple_captcha_valid?
+      redirect_to users_path
+    else
+     render :json => {:message => "not valid"}
+    end
+
 
 
   end

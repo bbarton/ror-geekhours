@@ -8,7 +8,10 @@ gem 'rails', '3.2.13'
 #gem 'sqlite3'
 gem 'mysql2'
 gem "twitter-bootstrap-rails"
+gem 'devise'
 gem "nested_form", '0.1.1'
+gem "galetahub-simple_captcha", :require => "simple_captcha"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
