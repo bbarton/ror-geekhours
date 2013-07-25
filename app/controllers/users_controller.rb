@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if simple_captcha_valid?
       redirect_to users_path
     else
-     render :json => {:message => "not valid"}
+      redirect_to new_user_path
     end
 
 
