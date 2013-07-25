@@ -13,33 +13,18 @@
       <%= f.label :team_name, 'Team Name' %>
       <%= f.text_field :team_name %><br />
       <%= f.fields_for :secondary_users do |sf| %>
-          <div class="control-group">
           <%= sf.label :name, 'Name',:class=>"control-label" %>
-            <div class="controls">
           <%= sf.text_field :name %>
-              </div>
-            </div>
-          <div class="control-group">
           <%= sf.label :email, 'Email',:class=>"control-label" %>
-            <div class="controls">
           <%= sf.text_field :email %><br />
-              </div>
-          </div>
-          <div class="control-group">
-            <%= sf.label :name, 'Name',:class=>"control-label" %>
-            <div class="controls">
-              <%= sf.text_field :name %>
-            </div>
-          </div>
-          <div class="control-group">
-            <%= sf.label :email, 'Email',:class=>"control-label" %>
-            <div class="controls">
-              <%= sf.text_field :email %><br />
-            </div>
-          </div>
+          <%= sf.label :name, 'Name',:class=>"control-label" %>
+          <input  name="user[secondary_users_attributes][1][name]">
+          <%= sf.label :email, 'Email',:class=>"control-label" %>
+          <input name="user[secondary_users_attributes][1][name]">
 
       <% end %>
-    </Div> <br/>
+    </div>
+
 
     <%= show_simple_captcha %>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>

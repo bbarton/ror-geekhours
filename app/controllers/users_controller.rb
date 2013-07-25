@@ -10,15 +10,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(params[:user])
-    @user.save
-    @user.secondary_users.build(params[:user][:secondary_user])
-    if simple_captcha_valid?
+    if SecondaryUser.find_by_email(params[:user][:email]).present?
+      flash[:notice] = "Email already present"
       redirect_to users_path
     else
-     render :json => {:message => "not valid"}
-    end
+      @user = User.create(params[:user])
 
+      @user.save
+      params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
+
+      if simple_captcha_valid?
+        redirect_to users_path
+      else
+        render :json => {:message => "not valid"}
+      end
+    end
 
 
   end
