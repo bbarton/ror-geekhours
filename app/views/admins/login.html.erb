@@ -1,0 +1,13 @@
+<h3>Admin Login</h3>
+  <%= form_tag confirm_admin_admins_path, :method => :post do %>
+    <!--<label class="control-label" for="inputEmail">Email</label>-->
+    <!--<input type="text" id="email" placeholder="Email">-->
+    <!--<label class="control-label" for="inputPassword">Password</label>-->
+    <!--<input type="password" id="inputPassword" placeholder="Password">-->
+    <!--<button type="submit" class="btn">Sign in</button>-->
+    <%= label_tag(:email, "Email") %>
+    <%= text_field_tag(:email) %>
+    <%= label_tag(:password, "Password") %>
+    <%= text_field_tag(:password) %>
+    <%= submit_tag("Search") %>
+  <% end %>
