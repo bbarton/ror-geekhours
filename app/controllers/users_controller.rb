@@ -16,5 +16,6 @@ class UsersController < ApplicationController
     @user.secondary_users.build(params[:user][:secondary_user])
     redirect_to users_path
 
+
   end
 end
