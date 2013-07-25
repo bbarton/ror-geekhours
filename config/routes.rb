@@ -1,16 +1,17 @@
 Geekhours::Application.routes.draw do
+  devise_for :admins
+
   resources :admins  do
     collection do
       get :login
       post :confirm_admin
     end
-
   end
 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  resources :users
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
