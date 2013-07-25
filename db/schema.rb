@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725130204) do
+ActiveRecord::Schema.define(:version => 20130725192819) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,12 +32,21 @@ ActiveRecord::Schema.define(:version => 20130725130204) do
   create_table "secondary_users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "User_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "secondary_users", ["User_id"], :name => "index_secondary_users_on_User_id"
+  add_index "secondary_users", ["user_id"], :name => "index_secondary_users_on_User_id"
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "users", :force => true do |t|
     t.string   "name"

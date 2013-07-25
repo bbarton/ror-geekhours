@@ -13,6 +13,7 @@
 //= require jquery-1.8.3
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require nested_form
 //= require_tree .
 
 $(document).ready(function() {

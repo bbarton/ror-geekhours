@@ -6,11 +6,21 @@
     <%= f.text_field :name %><br />
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email %><br />
+
     <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+
     <Div id="teamWrapper" style="display: none">
       <%= f.label :team_name, 'Team Name' %>
       <%= f.text_field :team_name %><br />
+      <%= f.fields_for :secondary_users do |sf| %>
+          <%= sf.label :name, 'Name' %>
+          <%= sf.text_field :name %>
+          <%= sf.label :email, 'Email' %>
+          <%= sf.text_field :email %><br />
+      <% end %>
     </Div> <br/>
+
+    <%= show_simple_captcha %>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>
 
 <% end %>
@@ -19,7 +29,6 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $(".createTeam").live("click", function(){
-                alert("hi");
                 $("#teamWrapper").show();
             });
         });
