@@ -1,0 +1,25 @@
+<h3>Registration Form</h3>
+
+<%= form_for @user do |f| %>
+
+    <%= f.label :Name, 'Name' %>
+    <%= f.text_field :name %><br />
+    <%= f.label :email, 'Email' %>
+    <%= f.text_field :email %><br />
+    <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+    <Div id="teamWrapper" style="display: none">
+    <%= f.label :team_name, 'Team Name' %>
+    <%= f.text_field :team_name %><br />
+    </Div> <br/>
+    <%= f.submit "Submit",:class=>"btn btn-primary" %>
+
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $(".createTeam").live("click", function(){
+        alert("hi");
+        $("#teamWrapper").show();
+    });
+    });
+</script>
