@@ -5,40 +5,40 @@
     <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
 </div>
 
-<table class = "table table-bordered" >
+<table class = "table table-bordered userInfo" >
   <thead>
   <tr>
-    <th><center> User </center></th>
-    <th><center> Team Name </center></th>
-    <th><center> Team Members </center></th>
-    <th><center> Description </center></th>
-    <th><center> Created At </center></th>
+    <th> User </th>
+    <th> Team Name</th>
+    <th>Team Members </th>
+    <th> Description </th>
+    <th> Created At </th>
   </tr>
   </thead>
   <tbody>
   <% @users.each do |user|%>
       <tr>
-        <td><center><%=user.email  %></center></td>
+        <td><%=user.email  %></td>
         <%if user.team_name.present? %>
-            <td><center><%=user.team_name  %></center></td>
+            <td><%=user.team_name  %></td>
         <%else%>
-            <td><center>Not Applicable </center></td>
+            <td>Individual</td>
         <%end%>
         <% if user.secondary_users.present?%>
             <td>
             <%user.secondary_users.each do |secondary_user|%>
-                <center><%= secondary_user.email  %></center></br/>
+               <%= secondary_user.email  %></br/>
             <%end %>
             </td>
         <%else%>
-            <td><center>Not Applicable </center></td>
+            <td>Not Applicable</td>
         <%end%>
         <% if user.description.present? %>
-            <td><center><%= user.description  %></center></td>
+            <td><%= user.description  %></td>
         <% else %>
-            <td><center> </center></td>
+            <td> </td>
          <% end %>
-        <td><center><%=user.created_at.strftime("%d %b. %Y") %> </center></td>
+        <td><%=user.created_at.strftime("%d %b. %Y") %> </td>
       </tr>
   <%end%>
   </tbody>

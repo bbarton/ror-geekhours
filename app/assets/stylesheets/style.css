@@ -48,6 +48,9 @@
 .description{
     width: 50%;
 }
+.textAlign{
+    text-align: center;
+}
 
 .LV_validation_message{
     font-color:red;
@@ -61,6 +64,9 @@
 .LV_valid
 {
     display: none;
+}
+.userInfo th, .userInfo td{
+    text-align: center;
 }
 
 
