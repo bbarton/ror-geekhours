@@ -32,6 +32,11 @@
         <%else%>
             <td><center>Not Applicable </center></td>
         <%end%>
+        <% if user.description.present? %>
+            <td><center><%= user.description  %></center></td>
+        <% else %>
+            <td><center>Not Applicable </center></td>
+         <% end %>
         <td><center><%=user.created_at.strftime("%d %b. %Y") %> </center></td>
       </tr>
   <%end%>
