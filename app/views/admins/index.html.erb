@@ -11,6 +11,7 @@
     <th><center> User </center></th>
     <th><center> Team Name </center></th>
     <th><center> Team Members </center></th>
+    <th><center> Description </center></th>
     <th><center> Created At </center></th>
   </tr>
   </thead>
@@ -35,7 +36,7 @@
         <% if user.description.present? %>
             <td><center><%= user.description  %></center></td>
         <% else %>
-            <td><center>Not Applicable </center></td>
+            <td><center> </center></td>
          <% end %>
         <td><center><%=user.created_at.strftime("%d %b. %Y") %> </center></td>
       </tr>
