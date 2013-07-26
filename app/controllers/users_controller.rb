@@ -19,10 +19,7 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       flash[:notice] = "Reenter Details"
-      redire
+      redirect_to user_path
     end
-    end
-
-
   end
 end
