@@ -12,12 +12,22 @@ bgImg.css({
     height: bgImgHeight,
     left:bgImgLeft
 });
-setTimeout(function(){
-    bgImg.animate({
-        left:bgImgLeftAnimate
-    },1500);
-},2000);
+bgImg.load(function(){
+    $('.loader').fadeOut(500);
+    setTimeout(function(){
+        bgImg.animate({
+            left:bgImgLeftAnimate
+        },1500,function(){
+            $('.home').animate({
+                opacity: 1
+            },100);
+        });
+    },2000);
+});
 
 $('.home, .gallery, .registerForm').css({
     minHeight:windowHeight
+})
+$('.home').css({
+    opacity: 0
 })
