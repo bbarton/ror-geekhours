@@ -48,12 +48,6 @@ $(window).scroll(function(){
         $('.homeInner').stop().animate({
             opacity:0
         },1000);
-    }else if(formShow <= scrollTop){
-        console.log('yes');
-        $('.galleryInner').stop().animate({
-            opacity:0
-        },1000);
-
     }else{
         console.log('else');
         $('.galleryInner').stop().animate({
