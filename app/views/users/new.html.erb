@@ -33,6 +33,8 @@
         </ul>
       </div>
     </div>
+    <%= f.label :description, 'Tell us about your idea & your self...' %>
+    <%= f.text_area :description,:rows=>7,:class=>"description" %> <br/>
     <%= show_simple_captcha %>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>
 
