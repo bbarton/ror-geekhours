@@ -22,9 +22,9 @@ class UsersController < ApplicationController
         @user = User.create(params[:user])
         logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
         params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
+        UserMailer.welcome_instr(@user).deliver
         redirect_to registered_user_users_path
       end
-
     else
       flash[:notice] = "Code is not valid.Please reenter the code."
       redirect_to root_path
