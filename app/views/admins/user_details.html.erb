@@ -4,5 +4,11 @@
   <h5>Geek Name :</h5> <%= @user.name %> <br/>
   <h5>Geek Email :</h5> <%= @user.email %> <br/>
   <h5>Team Members :</h5>
-
+     <% @user.secondary_users.each do |u| %>
+     <%= u.name %>
+     <%= u.email %>
+     <% end %>
+  <h5>Description :</h5> <%= @user.description %>
 </div>
+
+<%= link_to "Back",admins_path %>
