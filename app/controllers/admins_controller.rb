@@ -10,6 +10,6 @@ class AdminsController < ApplicationController
   end
 
   def user_details
-
+     @user = User.find(params[:id])
   end
 end
