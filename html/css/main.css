@@ -93,7 +93,7 @@ button.rBtn {
 .eventDate {
     margin-bottom: 10px;
 }
-.registerForm input.span4 {
+.registerForm input.span3 {
     background: transparent;
     border: none;
     border-bottom: 1px solid #4d4d4d;
@@ -125,7 +125,9 @@ textarea {
 .galleryWrapper .span2 {
     margin-bottom: 15px;
 }
-
+.placeholder {
+    color: #ccc;
+}
 
 
 

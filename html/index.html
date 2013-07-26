@@ -81,9 +81,21 @@
                         <input type="text" class="span4" placeholder="Email">
                         <div class="spna4"><a href="#" class="addMember">Add team members</a></div>
                         <div class="hiddenFields">
-                            <input type="text" class="span4" placeholder="Member1">
-                            <input type="text" class="span4" placeholder="Member2">
-                            <input type="text" class="span4" placeholder="Member3">
+                            <input type="text" class="span3" placeholder="Member1">
+                            <input type="text" class="span3" placeholder="Email1">
+                            <a href="javascript:void(0);" class="span2">Add</a>
+                            <a href="javascript:void(0);" class="span2">Delete</a>
+                            <div class="clearfix"></div>
+                            <input type="text" class="span3" placeholder="Member2">
+                            <input type="text" class="span3" placeholder="Email2">
+                            <a href="javascript:void(0);" class="span2">Add</a>
+                            <a href="javascript:void(0);" class="span2">Delete</a>
+                            <div class="clearfix"></div>
+                            <input type="text" class="span3" placeholder="Member3">
+                            <input type="text" class="span3" placeholder="Email3">
+                            <a href="javascript:void(0);" class="span2">Add</a>
+                            <a href="javascript:void(0);" class="span2">Delete</a>
+                            <div class="clearfix"></div>
                         </div>
                         <textarea class="span4">Tell us about your idea & your self...</textarea>
                         <span class="help-block">Example block-level help text here.</span>
@@ -104,11 +116,13 @@
 <script src="js/vendor/jquery.colorbox-min.js"></script>
 <script src="js/vendor/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script>
-    $(document).ready(function(){
-        $(".group1").colorbox({rel:'group2'});
-    });
+$(document).ready(function(){
+$(".group1").colorbox({rel:'group2', transition:"fade"});
+});
 </script>
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/jquery.placeholder.min.js"></script>
+<script>$('input[placeholder], textarea[placeholder]').placeholder();</script>
 
 </body>
 </html>
