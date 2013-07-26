@@ -7,26 +7,35 @@
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email %><br />
 
-    <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+    <%#= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <Div id="teamWrapper" style="display: none" class="clearfix">
-      <%= f.label :team_name, 'Team Name' %>
-      <%= f.text_field :team_name %><br />
-      <%= f.fields_for :secondary_users do |sf| %>
-          <%= sf.label :name, 'Name',:class=>"control-label" %>
-          <%= sf.text_field :name %>
-          <%= sf.label :email, 'Email',:class=>"control-label" %>
-          <%= sf.text_field :email %><br />
-          <%= sf.label :name, 'Name',:class=>"control-label" %>
-          <input  name="user[secondary_users_attributes][1][name]">
-          <%= sf.label :email, 'Email',:class=>"control-label" %>
-          <input name="user[secondary_users_attributes][1][name]">
+    <div id="teamWrapper"  class="clearfix">
+      <div class="create-team-content">
+          <%= f.label :team_name, 'Team Name' %>
+          <%= f.text_field :team_name %><br />
+        <ul class="team-content">
+          <%= f.fields_for :secondary_users do |sf| %>
 
-      <% end %>
+              <li>
+              <div class="name-field">
+                  <%= sf.label :name, 'Name',:class=>"control-label" %>
+                  <%= sf.text_field :name %>
+              </div>
+              <div class="email-field">
+                  <%= sf.label :email, 'Email',:class=>"control-label" %>
+                  <%= sf.text_field :email %>
+
+              </div>
+                <%= link_to "add","javascript:void(0)",:class=>"addUser" %>
+                <%= link_to "delete","javascript:void(0)",:class=>"deleteUser" %>
+              </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-
-
+    <div class="catchaCnt">
     <%= show_simple_captcha %>
+     </div>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>
 
 <% end %>
@@ -36,6 +45,12 @@
         $(document).ready(function(){
             $(".createTeam").live("click", function(){
                 $("#teamWrapper").show();
+            });
+            $(".team-content li a.addUser").click(function(){
+              $(this).parents("li").next().show();
+            });
+            $(".team-content li a.deleteUser").click(function(){
+                $(this).parents("li").hide();
             });
         });
     </script>

@@ -5,3 +5,47 @@
     float: left;
     margin-right: 20px;
 }
+.name-field, .email-field {
+    float: left;
+    margin-right: 20px;
+}
+.email-field {
+    margin-right: 10px;
+}
+/*.team-content {*/
+    /*background: red;*/
+/*}*/
+.create-team-content .team-content li {
+    display: none;
+    overflow: hidden;
+}
+.create-team-content .team-content li:first-child {
+    display: block;
+}
+.create-team-content .team-content li:first-child .deleteUser{
+    display: none;
+}
+.team-content li a{
+    line-height: 70px;
+}
+.team-content li {
+    list-style: none;
+}
+.catchaCnt{
+    margin: 0 0 20px;
+}
+.catchaCnt .simple_captcha_label{
+   display: none;
+}
+.catchaCnt::-webkit-input-placeholder {
+    color: #fff;
+}
+/*:-moz-placeholder { *//* Firefox 18- */
+    /*color: transparent;*/
+/*}*/
+/*::-moz-placeholder {  *//* Firefox 19+ */
+    /*color: transparent;*/
+/*}*/
+/*:-ms-input-placeholder {*/
+    /*color: transparent;*/
+/*}*/

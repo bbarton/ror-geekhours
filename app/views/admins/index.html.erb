@@ -1,1 +1,38 @@
-<%= link_to "logout",  destroy_admin_session_path, method: :delete %>
+<% if flash[:notice].present? %>
+    <%=  flash[:success] %>
+<%end%>
+<div class="pull-right">
+    <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
+</div>
+
+<table class = "table table-bordered" >
+  <thead>
+  <tr>
+    <th><center> User </center></th>
+    <th><center> Team Name </center></th>
+    <th><center> Team Members </center></th>
+    <th><center> Created At </center></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user|%>
+      <tr>
+        <td><center><%=user.email  %></center></td>
+        <%if user.team_name.present? %>
+            <td><center><%=user.team_name  %></center></td>
+        <%else%>
+            <td><center>Not Applicable </center></td>
+        <%end%>
+        <% if user.secondary_users.present?%>
+            <%user.secondary_users.each do |secondary_user|%>
+                <td><center><%= secondary_user.email  %></center></td>
+            <%end %>
+        <%else%>
+            <td><center>Not Applicable </center></td>
+        <%end%>
+        <td><center><%=user.created_at.strftime("%d %b. %Y") %> </center></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
+
