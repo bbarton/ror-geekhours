@@ -34,3 +34,18 @@
 .description{
     width: 50%;
 }
+
+.LV_validation_message{
+    font-color:red;
+}
+
+
+.LV_invalid {
+    color:#CC0000;
+}
+
+.LV_valid
+{
+    display: none;
+}
+

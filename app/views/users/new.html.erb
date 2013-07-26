@@ -1,5 +1,7 @@
 <h3>Registration Form</h3>
-
+<% if flash[:notice].present? %>
+    <h5> <%=  flash[:notice] %></h5>
+<% end %>
 <%= form_for @user do |f| %>
 
     <%= f.label :Name, 'Name' %>
@@ -7,9 +9,9 @@
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email %><br />
 
-    <%#= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+    <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <div id="teamWrapper"  class="clearfix">
+    <div id="teamWrapper" style="display: none"  class="clearfix">
       <div class="create-team-content">
           <%= f.label :team_name, 'Team Name' %>
           <%= f.text_field :team_name %><br />
@@ -52,6 +54,11 @@
             $(".team-content li a.deleteUser").click(function(){
                 $(this).parents("li").hide();
             });
+
+            var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
+            username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
+            var email = new LiveValidation( 'user_email', {onlyOnSubmit: true } );
+            email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
         });
     </script>
 <%end%>
