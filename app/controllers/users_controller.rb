@@ -21,12 +21,12 @@ class UsersController < ApplicationController
     elsif simple_captcha_valid?
       @user = User.create(params[:user])
       params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
-      if simple_captcha_valid?
-        flash[:notice] = "Thank you.Registered successfully."
-        redirect_to users_path
-      else
-        render :json => {:message => "not valid"}
-      end
+      flash[:notice] = "Thank you.Registered successfully."
+      redirect_to users_path
+    else
+      flash[:notice] = "Code is not valid.Please reenter the code."
+      redirect_to new_user_path
     end
   end
 end
+
