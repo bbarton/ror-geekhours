@@ -6,6 +6,9 @@ Geekhours::Application.routes.draw do
       get :login
       post :confirm_admin
     end
+    member do
+      get :user_details
+    end
   end
 
 

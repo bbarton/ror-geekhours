@@ -4,9 +4,9 @@
 <% end %>
 <%= form_for @user do |f| %>
 
-    <%= f.label :Name, 'Name' %>
+    <%= f.label :Name, 'Name*' %>
     <%= f.text_field :name %><br />
-    <%= f.label :email, 'Email' %>
+    <%= f.label :email, 'Email*' %>
     <%= f.text_field :email %><br />
 
     <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
@@ -35,7 +35,7 @@
         </ul>
       </div>
     </div>
-    <%= f.label :description, 'Tell us about your idea & your self...' %>
+    <%= f.label :description, 'Tell us about your idea & your self...*' %>
     <%= f.text_area :description,:rows=>7,:class=>"description" %> <br/>
     <div class="catchaCnt">
       <%= show_simple_captcha %>
@@ -61,6 +61,8 @@
             username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
             var email = new LiveValidation( 'user_email', {onlyOnSubmit: true } );
             email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
+            var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
+            description.add( Validate.Presence,{failureMessage:"Description can not be empty."}  );
         });
     </script>
 <%end%>

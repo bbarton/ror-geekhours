@@ -8,36 +8,23 @@
 <table class = "table table-bordered userInfo" >
   <thead>
   <tr>
-    <th> User </th>
-    <th> Team Name</th>
-    <th>Team Members </th>
-    <th> Description </th>
+    <th> Geek Name</th>
+    <th> Geek Email</th>
+    <th>Team Name </th>
     <th> Created At </th>
   </tr>
   </thead>
   <tbody>
   <% @users.each do |user|%>
       <tr>
+        <td><%= link_to user.name, user_details_admin_path  %></td>
         <td><%=user.email  %></td>
         <%if user.team_name.present? %>
             <td><%=user.team_name  %></td>
         <%else%>
             <td>Individual</td>
         <%end%>
-        <% if user.secondary_users.present?%>
-            <td>
-            <%user.secondary_users.each do |secondary_user|%>
-               <%= secondary_user.email  %></br/>
-            <%end %>
-            </td>
-        <%else%>
-            <td>Not Applicable</td>
-        <%end%>
-        <% if user.description.present? %>
-            <td><%= user.description  %></td>
-        <% else %>
-            <td> </td>
-         <% end %>
+
         <td><%=user.created_at.strftime("%d %b. %Y") %> </td>
       </tr>
   <%end%>
