@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :secondary_users
   attr_accessible :email, :name, :team_name,:description,:secondary_users_attributes
+  validate :email, :uniqueness => true
 
 end

@@ -5,7 +5,8 @@ class AdminsController < ApplicationController
       @users = User.all
 
      else
-       (flash[:success]= "You need to Sign in")
+       flash[:success]= "You need to Sign in"
+       redirect_to root_path
      end
   end
 
