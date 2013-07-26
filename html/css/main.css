@@ -106,13 +106,13 @@ textarea {
     border: none;
     border-bottom: 1px solid #4d4d4d;
 }
-.fixedRegister {
+/*.fixedRegister {
     top: 0;
     left: 50%;
     position: fixed;
     margin-left: 90px;
-    /*background: #000;*/
-}
+    *//*background: #000;*//*
+}*/
 .loader {
     height: 100%;
     width: 100%;
