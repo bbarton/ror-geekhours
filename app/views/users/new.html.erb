@@ -1,5 +1,7 @@
 <h3>Registration Form</h3>
-
+<% if flash[:notice].present? %>
+    <h5> <%=  flash[:notice] %></h5>
+<% end %>
 <%= form_for @user do |f| %>
 
     <%= f.label :Name, 'Name' %>
@@ -7,25 +9,25 @@
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email %><br />
 
-    <%#= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+    <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <div id="teamWrapper"  class="clearfix">
+    <div id="teamWrapper" style="display: none"  class="clearfix">
       <div class="create-team-content">
-          <%= f.label :team_name, 'Team Name' %>
-          <%= f.text_field :team_name %><br />
+        <%= f.label :team_name, 'Team Name' %>
+        <%= f.text_field :team_name %><br />
         <ul class="team-content">
           <%= f.fields_for :secondary_users do |sf| %>
 
               <li>
-              <div class="name-field">
+                <div class="name-field">
                   <%= sf.label :name, 'Name',:class=>"control-label" %>
                   <%= sf.text_field :name %>
-              </div>
-              <div class="email-field">
+                </div>
+                <div class="email-field">
                   <%= sf.label :email, 'Email',:class=>"control-label" %>
                   <%= sf.text_field :email %>
 
-              </div>
+                </div>
                 <%= link_to "add","javascript:void(0)",:class=>"addUser" %>
                 <%= link_to "delete","javascript:void(0)",:class=>"deleteUser" %>
               </li>
@@ -33,9 +35,11 @@
         </ul>
       </div>
     </div>
+    <%= f.label :description, 'Tell us about your idea & your self...' %>
+    <%= f.text_area :description,:rows=>7,:class=>"description" %> <br/>
     <div class="catchaCnt">
-    <%= show_simple_captcha %>
-     </div>
+      <%= show_simple_captcha %>
+    </div>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>
 
 <% end %>
@@ -47,11 +51,16 @@
                 $("#teamWrapper").show();
             });
             $(".team-content li a.addUser").click(function(){
-              $(this).parents("li").next().show();
+                $(this).parents("li").next().show();
             });
             $(".team-content li a.deleteUser").click(function(){
                 $(this).parents("li").hide();
             });
+
+            var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
+            username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
+            var email = new LiveValidation( 'user_email', {onlyOnSubmit: true } );
+            email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
         });
     </script>
 <%end%>

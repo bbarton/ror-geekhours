@@ -31,6 +31,7 @@
 .team-content li {
     list-style: none;
 }
+
 .catchaCnt{
     margin: 0 0 20px;
 }
@@ -40,12 +41,23 @@
 .catchaCnt::-webkit-input-placeholder {
     color: #fff;
 }
-/*:-moz-placeholder { *//* Firefox 18- */
-    /*color: transparent;*/
-/*}*/
-/*::-moz-placeholder {  *//* Firefox 19+ */
-    /*color: transparent;*/
-/*}*/
-/*:-ms-input-placeholder {*/
-    /*color: transparent;*/
-/*}*/
+
+.description{
+    width: 50%;
+}
+
+.LV_validation_message{
+    font-color:red;
+}
+
+
+.LV_invalid {
+    color:#CC0000;
+}
+
+.LV_valid
+{
+    display: none;
+}
+
+

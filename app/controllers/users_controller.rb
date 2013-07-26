@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     logger.info"#{params[:user][:email].inspect}"
     email = params[:user][:email].split("@")
     if email[1].downcase == "yopmail.com" || email[1] == "mailinator.com" || email[1] == "mailcatch.com" || email[1] == "dudmail.com"
-      flash[:notice] = "Invalid Email Id"
-      redirect_to users_path
+      flash[:notice] = "Invalid email domain #{email[1]}."
+      redirect_to new_user_path
     elsif SecondaryUser.find_by_email(params[:user][:email]).present?
       flash[:notice] = "Email already present"
       redirect_to users_path
