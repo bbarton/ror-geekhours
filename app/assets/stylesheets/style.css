@@ -25,6 +25,9 @@
 .create-team-content .team-content li:first-child .deleteUser{
     display: none;
 }
+.create-team-content .team-content li:last-child .addUser{
+    display: none;
+}
 .team-content li a{
     line-height: 70px;
 }
