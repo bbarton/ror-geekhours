@@ -1,14 +1,59 @@
-<div>
-
-  <h5>Team Name :</h5><%= @user.team_name %> <br/>
-  <h5>Geek Name :</h5> <%= @user.name %> <br/>
-  <h5>Geek Email :</h5> <%= @user.email %> <br/>
-  <h5>Team Members :</h5>
-     <% @user.secondary_users.each do |u| %>
-     <%= u.name %>
-     <%= u.email %>
-     <% end %>
-  <h5>Description :</h5> <%= @user.description %>
+<div class="pull-right">
+  <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
 </div>
+  <form class="form-horizontal formDetails">
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">Team Name :</label>
+      <div class="controls">
+        <%= @user.team_name %>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">Geek Name :</label>
+      <div class="controls">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">Geek Email :</label>
+      <div class="controls">
+        <%= @user.email %>
+      </div>
+    </div>
+    <h4>Team Members</h4>
+    <div class="teamMembers">
+       <% if @user.secondary_users.present? %>
+      <% @user.secondary_users.each do |u| %>
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Member Name :</label>
+            <div class="controls">
+              <%= u.name %>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="inputEmail">Member Email :</label>
+            <div class="controls">
+              <%= u.email %>
+            </div>
+          </div>
+
+      <% end %>
+          <% else %>
+          <div class="control-group">
+            <div class="controls">
+              Individual
+            </div>
+          </div>
+       <% end %>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="inputEmail">Description :</label>
+      <div class="controls">
+        <%= @user.description %>
+      </div>
+    </div>
+    </form>
+
 
 <%= link_to "Back",admins_path %>

@@ -5,6 +5,7 @@ Geekhours::Application.routes.draw do
     collection do
       get :login
       post :confirm_admin
+
     end
     member do
       get :user_details
@@ -14,7 +15,11 @@ Geekhours::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resources :users
+  resources :users do
+    collection do
+      get :registered_user
+    end
+  end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

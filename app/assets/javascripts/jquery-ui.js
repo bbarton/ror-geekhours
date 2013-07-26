@@ -128,7 +128,7 @@ function focusable( element, isTabIndexNotNaN ) {
 		if ( !element.href || !mapName || map.nodeName.toLowerCase() !== "map" ) {
 			return false;
 		}
-		img = $( "img[usemap=#" + mapName + "]" )[0];
+		img = $( "imgaes[usemap=#" + mapName + "]" )[0];
 		return !!img && visible( img );
 	}
 	return ( /input|select|textarea|button|object/.test( nodeName ) ?
@@ -4260,7 +4260,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 								.attr( "colspan", $( this ).attr( "colspan" ) || 1 )
 								.appendTo( element );
 						});
-					} else if ( nodeName === "img" ) {
+					} else if ( nodeName === "imgaes" ) {
 						element.attr( "src", that.currentItem.attr( "src" ) );
 					}
 
@@ -7811,10 +7811,10 @@ $.extend(Datepicker.prototype, {
 			buttonText = this._get(inst, "buttonText");
 			buttonImage = this._get(inst, "buttonImage");
 			inst.trigger = $(this._get(inst, "buttonImageOnly") ?
-				$("<img/>").addClass(this._triggerClass).
+				$("<imgaes/>").addClass(this._triggerClass).
 					attr({ src: buttonImage, alt: buttonText, title: buttonText }) :
 				$("<button type='button'></button>").addClass(this._triggerClass).
-					html(!buttonImage ? buttonText : $("<img/>").attr(
+					html(!buttonImage ? buttonText : $("<imgaes/>").attr(
 					{ src:buttonImage, alt:buttonText, title:buttonText })));
 			input[isRTL ? "before" : "after"](inst.trigger);
 			inst.trigger.click(function() {
@@ -7975,7 +7975,7 @@ $.extend(Datepicker.prototype, {
 			target.disabled = false;
 			inst.trigger.filter("button").
 				each(function() { this.disabled = false; }).end().
-				filter("img").css({opacity: "1.0", cursor: ""});
+				filter("imgaes").css({opacity: "1.0", cursor: ""});
 		} else if (nodeName === "div" || nodeName === "span") {
 			inline = $target.children("." + this._inlineClass);
 			inline.children().removeClass("ui-state-disabled");
@@ -8003,7 +8003,7 @@ $.extend(Datepicker.prototype, {
 			target.disabled = true;
 			inst.trigger.filter("button").
 				each(function() { this.disabled = true; }).end().
-				filter("img").css({opacity: "0.5", cursor: "default"});
+				filter("imgaes").css({opacity: "0.5", cursor: "default"});
 		} else if (nodeName === "div" || nodeName === "span") {
 			inline = $target.children("." + this._inlineClass);
 			inline.children().addClass("ui-state-disabled");
