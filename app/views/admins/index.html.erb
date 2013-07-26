@@ -24,9 +24,11 @@
             <td><center>Not Applicable </center></td>
         <%end%>
         <% if user.secondary_users.present?%>
+            <td>
             <%user.secondary_users.each do |secondary_user|%>
-                <td><center><%= secondary_user.email  %></center></td>
+                <center><%= secondary_user.email  %></center></br/>
             <%end %>
+            </td>
         <%else%>
             <td><center>Not Applicable </center></td>
         <%end%>
