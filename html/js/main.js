@@ -18,16 +18,49 @@ bgImg.load(function(){
         bgImg.animate({
             left:bgImgLeftAnimate
         },1500,function(){
-            $('.home').animate({
-                opacity: 1
-            },100);
+//            $('.homeInner').fadeIn(1000);
+            $('.homeInner').animate({
+                opacity:1
+            },1000);
         });
     },2000);
 });
-
+$('.rBtn').click(function(){
+    $.scrollTo($('#registerForm'),{top:'10px', left:'290px', duration: 800});
+})
 $('.home, .gallery, .registerForm').css({
     minHeight:windowHeight
+});
+$('.homeInner, .galleryInner').css({
+//    display: 'none'
+    opacity:0
 })
-$('.home').css({
-    opacity: 0
-})
+$(window).scroll(function(){
+    var scrollTop = $(window).scrollTop();
+    var homeHeight = $('.home').height();
+    var galleryHeight = $('.gallery').height();
+    var formShow = homeHeight + galleryHeight
+    console.log(scrollTop);
+    if(scrollTop >= 100){
+        $('.galleryInner').stop().animate({
+            opacity:1
+        },1000);
+        $('.homeInner').stop().animate({
+            opacity:0
+        },1000);
+    }else if(formShow <= scrollTop){
+        console.log('yes');
+        $('.galleryInner').stop().animate({
+            opacity:0
+        },1000);
+
+    }else{
+        console.log('else');
+        $('.galleryInner').stop().animate({
+            opacity:0
+        },1000);
+        $('.homeInner').stop().animate({
+            opacity:1
+        },1000);
+    }
+});

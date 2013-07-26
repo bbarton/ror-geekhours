@@ -39,8 +39,11 @@ h1,h2 {
     margin-bottom: 28px;
 }
 .home {
-    padding-top: 195px;
     text-align: center;
+}
+.videoWrapper {
+    height: 305px;
+    width: 400px;
 }
 .logo {
     height: 32px;
@@ -48,7 +51,10 @@ h1,h2 {
     background: url("../img/logo.png");
     margin-bottom: 60px;
     display: block;
-    text-indent: -5000px;;
+    text-indent: -5000px;
+}
+.home .logo {
+    margin-top: 195px;
 }
 .home p {
     margin-bottom: 65px;
@@ -99,6 +105,13 @@ textarea {
     resize: none;
     border: none;
     border-bottom: 1px solid #4d4d4d;
+}
+.fixedRegister {
+    top: 0;
+    left: 50%;
+    position: fixed;
+    margin-left: 90px;
+    /*background: #000;*/
 }
 .loader {
     height: 100%;

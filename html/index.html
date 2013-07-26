@@ -27,6 +27,7 @@
 <div class="container">
     <div class="row">
         <div class="span7 offset5 home">
+            <div class="homeInner">
             <div class="row">
                 <div class="span3 offset2">
                     <a href="http://www.webonise.com" class="logo">Webonise</a>
@@ -37,14 +38,18 @@
                 Geek hours is a Hackathon event organised by Webonise Lab.<br> Developers/ Designers from all over Pune gather for<br> a day to build somthing useful & opensource.
             </p>
             <a href="#" class="rBtn">Register</a>
+            </div>
         </div>
         <div class="span7 offset5 gallery">
+            <div class="galleryInner">
             <div class="row">
+                <div class="fixedRegister">
                 <div class="eventDate">3rd Auguest 2013, Pune, India</div>
                 <a href="#" class="rBtnSmall">Register</a>
+                </div>
                 <h2>From last Geek Hours</h2>
                 <div class="row galleryWrapper">
-                    <div class="span6">
+                    <div class="span6 videoWrapper">
                         <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
                     <div class="span2"><a class="group1" href="img/IMG_4027.jpg" title=""><img src="img/IMG_4027.jpg" alt="" /> </a></div>
@@ -58,8 +63,10 @@
                     <div class="span2"><a class="group1" href="img/IMG_4145.jpg" title=""><img src="img/IMG_4145.jpg" alt="" /> </a></div>
                 </div>
             </div>
+            </div>
         </div>
-        <div class="span7 offset5 registerForm">
+        <div class="span7 offset5 registerForm" id="registerForm">
+            <div class="registerFormInner">
             <div class="row">
                 <div class="eventDate">3rd Auguest 2013, Pune, India</div>
                 <div class="row">
@@ -85,6 +92,7 @@
                     </fieldset>
                 </form>
             </div>
+            </div>
         </div>
     </div>
 </div>
@@ -94,9 +102,10 @@
 
     <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/jquery.colorbox-min.js"></script>
+<script src="js/vendor/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script>
     $(document).ready(function(){
-        $(".group1").colorbox({rel:'group1'});
+        $(".group1").colorbox({rel:'group2'});
     });
 </script>
     <script src="js/main.js"></script>
