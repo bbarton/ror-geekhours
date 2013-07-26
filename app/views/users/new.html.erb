@@ -9,23 +9,29 @@
 
     <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <Div id="teamWrapper" style="display: none" class="clearfix">
-      <%= f.label :team_name, 'Team Name' %>
-      <%= f.text_field :team_name %><br />
-      <%= f.fields_for :secondary_users do |sf| %>
-          <%= sf.label :name, 'Name',:class=>"control-label" %>
-          <%= sf.text_field :name %>
-          <%= sf.label :email, 'Email',:class=>"control-label" %>
-          <%= sf.text_field :email %><br />
-          <%= sf.label :name, 'Name',:class=>"control-label" %>
-          <input  name="user[secondary_users_attributes][1][name]">
-          <%= sf.label :email, 'Email',:class=>"control-label" %>
-          <input name="user[secondary_users_attributes][1][name]">
+    <div id="teamWrapper" style="display: none" class="clearfix">
+      <div class="create-team-content">
+          <%= f.label :team_name, 'Team Name' %>
+          <%= f.text_field :team_name %><br />
+        <ul class="team-content">
+          <%= f.fields_for :secondary_users do |sf| %>
 
-      <% end %>
+              <li>
+              <div class="name-field">
+                  <%= sf.label :name, 'Name',:class=>"control-label" %>
+                  <%= sf.text_field :name %>
+              </div>
+              <div class="email-field">
+                  <%= sf.label :email, 'Email',:class=>"control-label" %>
+                  <%= sf.text_field :email %>
+                <%= link_to "add","javascript:void(0)",:class=>"addUser" %>
+              </div>
+
+              </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-
-
     <%= show_simple_captcha %>
     <%= f.submit "Submit",:class=>"btn btn-primary" %>
 
@@ -37,6 +43,12 @@
             $(".createTeam").live("click", function(){
                 $("#teamWrapper").show();
             });
+            $(".team-content li:first-child a").click(function(){
+              $(".team-content li:nth-child(2)").show();
+            });
+            $(".team-content li:nth-child(2) a").click(function(){
+                $(".team-content li:nth-child(3)").show();
+            })
         });
     </script>
 <%end%>
