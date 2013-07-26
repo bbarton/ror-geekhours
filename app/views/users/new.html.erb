@@ -7,9 +7,9 @@
     <%= f.label :email, 'Email' %>
     <%= f.text_field :email %><br />
 
-    <%= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
+    <%#= link_to "Create Team", "javascript:void(0)", :class=>"createTeam" %>
 
-    <div id="teamWrapper" style="display: none" class="clearfix">
+    <div id="teamWrapper"  class="clearfix">
       <div class="create-team-content">
           <%= f.label :team_name, 'Team Name' %>
           <%= f.text_field :team_name %><br />
@@ -24,9 +24,10 @@
               <div class="email-field">
                   <%= sf.label :email, 'Email',:class=>"control-label" %>
                   <%= sf.text_field :email %>
-                <%= link_to "add","javascript:void(0)",:class=>"addUser" %>
-              </div>
 
+              </div>
+                <%= link_to "add","javascript:void(0)",:class=>"addUser" %>
+                <%= link_to "delete","javascript:void(0)",:class=>"deleteUser" %>
               </li>
           <% end %>
         </ul>
@@ -43,12 +44,12 @@
             $(".createTeam").live("click", function(){
                 $("#teamWrapper").show();
             });
-            $(".team-content li:first-child a").click(function(){
-              $(".team-content li:nth-child(2)").show();
+            $(".team-content li a.addUser").click(function(){
+              $(this).parents("li").next().show();
             });
-            $(".team-content li:nth-child(2) a").click(function(){
-                $(".team-content li:nth-child(3)").show();
-            })
+            $(".team-content li a.deleteUser").click(function(){
+                $(this).parents("li").hide();
+            });
         });
     </script>
 <%end%>

@@ -5,16 +5,29 @@
     float: left;
     margin-right: 20px;
 }
-.name-field {
+.name-field, .email-field {
     float: left;
-    margin-right: 30px;
+    margin-right: 20px;
+}
+.email-field {
+    margin-right: 10px;
 }
 /*.team-content {*/
     /*background: red;*/
 /*}*/
 .create-team-content .team-content li {
     display: none;
+    overflow: hidden;
 }
 .create-team-content .team-content li:first-child {
     display: block;
+}
+.create-team-content .team-content li:first-child .deleteUser{
+    display: none;
+}
+.team-content li a{
+    line-height: 70px;
+}
+.team-content li {
+    list-style: none;
 }
