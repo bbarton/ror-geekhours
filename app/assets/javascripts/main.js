@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var windowHeight = $(window).height();
 var windowWidth= $(window).width();
 
@@ -57,4 +58,5 @@ $(window).scroll(function(){
             opacity:1
         },1000);
     }
+});
 });

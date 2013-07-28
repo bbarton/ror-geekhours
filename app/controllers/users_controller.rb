@@ -7,29 +7,31 @@ class UsersController < ApplicationController
 
   def create
     email = params[:user][:email].split("@")
+    logger.info("1111111#{email}")
     exist_user = User.find_by_email params[:user][:email]
-    if email[1].downcase == "yopmail.com" || email[1] == "mailinator.com" || email[1] == "mailcatch.com" || email[1] == "dudmail.com"
-      flash[:notice] = "Invalid email domain #{email[1]}."
-      redirect_to root_path
-    elsif SecondaryUser.find_by_email(params[:user][:email]).present?
-      flash[:notice] = "Email already present"
-      redirect_to root_path
-    elsif simple_captcha_valid?
-      if exist_user.present?
-        flash[:notice] = "Email has already been taken"
-        redirect_to root_path
+    respond_to do |format|
+      if email[1].downcase == "yopmail.com" || email[1] == "mailinator.com" || email[1] == "mailcatch.com" || email[1] == "dudmail.com"
+        logger.info("sadasdasdasdd#{email}")
+        flash[:notice] = "Invalid email domain #{email[1]}."
+        format.html {  redirect_to root_path }
+        format.js
       else
         @user = User.create(params[:user])
         logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
         params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
         #UserMailer.welcome_instr(@user).deliver
-        redirect_to registered_user_users_path
-      end
-    else
-      flash[:notice] = "Code is not valid.Please reenter the code."
-      redirect_to root_path
-    end
+        if @user.save
+          flash[:notice] = nil
+          format.html { redirect_to registered_user_users_path}
+          format.js
+        else
+          flash[:notice] = "Email Already Exists"
+          format.html {  redirect_to root_path }
+          format.js
+        end
 
+      end
+    end
   end
 
   def registered_user

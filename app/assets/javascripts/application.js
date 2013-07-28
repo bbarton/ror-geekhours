@@ -10,7 +10,16 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require_self
-//= require_tree
+//= require jquery
+//= require jquery_ujs
+//= require modernizr-2.6.2-respond-1.1.0.min
+//= require bootstrap.min
+//= require jquery.colorbox-min
+//= require jquery.scrollTo-1.4.3.1-min
+//= require livevalidation
+//= require main
+//= require jquery.placeholder.min
+
+
 
 

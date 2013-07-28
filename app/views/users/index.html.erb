@@ -31,9 +31,10 @@
             <div class="span6 videoWrapper">
               <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             </div>
-            <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" title=""><img src="/images/IMG_4027.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4042.jpg" title=""><img src="/images/IMG_4042.jpg" alt="" /> </a></div>
+
+            <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" width="460" height="305" title=""><img src="/images/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img  rel="gallery" src="/images/IMG_4042.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>
@@ -54,60 +55,49 @@
             </div>
           </div>
           <h2>Register for event</h2>
-          <% if flash[:notice].present? %>
-              <h5> <%=  flash[:notice] %></h5>
-          <% end %>
+          <div class="flashnotice">
+            <% if flash[:notice].present? %>
+                <h5> <%=  flash[:notice] %></h5>
+            <% end %>
+          </div>
         </div>
-        <%= form_for @user do |f| %>
+
+        <%= form_for @user , :remote => true do |f| %>
             <% if @user.errors.full_messages.any? %>
                 <% @user.errors.full_messages.each do |error_message| %>
                     <%= error_message if @user.errors.full_messages.first == error_message %>
                 <% end %>
             <% end %>
             </div>
-            <fieldset>
-              <div class="span6 registerEmailWrap">
-                <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
-                <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
-              </div>
-              <div class="clearfix"></div>
-              <div class="span6"><a href="#" class="addMember">Add team members</a></div>
-              <%= f.text_field :team_name,:class=>"span7", :placeholder=>"Team Name" %>
-              <div class="hiddenFields">
-                <%= f.fields_for :secondary_users do |sf| %>
-                    <div class="inputs">
-                      <div class="span6">
-                        <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
-                        <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
-                      </div>
-                      <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
-                      <div class="clearfix"></div>
+            <div class="span6 registerEmailWrap">
+              <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
+              <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="span6"><a href="#" class="addMember">Add team members</a></div>
+            <%= f.text_field :team_name,:class=>"span7", :placeholder=>"Team Name" %>
+            <div class="hiddenFields">
+              <%= f.fields_for :secondary_users do |sf| %>
+                  <div class="inputs">
+                    <div class="span6">
+                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
+                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
                     </div>
-                <% end %>
+                    <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
+                    <div class="clearfix"></div>
+                  </div>
+              <% end %>
 
-              </div>
-              <div class="clearfix"></div>
-              <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
-              <div class="catchaCnt span7">
-                <%= f.label :captcha, 'Type the code shown in the image' %>
-                <%= show_simple_captcha %>
-              </div>
-              <span class="help-block">Example block-level help text here.</span>
-              <%= f.submit "Register",:class=>"rBtn" %>
-            </fieldset>
+            </div>
+            <div class="clearfix"></div>
+            <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
+            <%= f.submit "Register",:class=>"rBtn" %>
         <% end %>
         </div>
   </div>
 </div>
 
 
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>-->
-<%= javascript_include_tag "jquery.min.js" %>
-<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>-->
-
-<%= javascript_include_tag "bootstrap.min" %>
-<%= javascript_include_tag "jquery.colorbox-min" %>
-<%= javascript_include_tag "jquery.scrollTo-1.4.3.1-min" %>
 
 <script>
     $(document).ready(function(){
@@ -126,24 +116,21 @@
         email.add(Validate.Email);
         var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
         description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
-        $(".group1").colorbox({rel:'group2', transition:"fade"});
-        $.ajax({
-            url: form.attr("hh"),
-            dataType: "JSON",
-            type: "get",
-            data: form.serialize(),
-            success: function(data) {
-                var $result;
-                this.result = data;
-                $result = data;
-                $(".newSearchForm, .editSearchForm").hide();
-                $(".searchCrieteria").show();
-                return show_result(data);
+        $("#new_user").on("submit",function(event){
+            event.preventDefault();
+            if ($(".LV_invalid").length > 0) {
+                return false;
             }
-        });
+            else {
+                console.log($(event).serialize());
+                $.post($(event).attr('action'), $(event).serialize(), null, "script");
+            }
+
+        })
+
+        $("a.group1").colorbox({rel:'group1', transition:"fade"});
     });
 </script>
-<script src="<%= asset_path("main.js")%>"></script>
-<script src="<%= asset_path("jquery.placeholder.min.js")%>"></script>
+
 <script>$('input[placeholder], textarea[placeholder]').placeholder();</script>
 
