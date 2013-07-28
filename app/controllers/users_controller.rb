@@ -16,11 +16,11 @@ class UsersController < ApplicationController
         format.html {  redirect_to root_path }
         format.js
       else
-        @user = User.create(params[:user])
+        @user = User.new(params[:user])
         logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
         params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
-        #UserMailer.welcome_instr(@user).deliver
-        if @user.save
+      if @user.save
+          UserMailer.welcome_email(@user).deliver
           flash[:notice] = nil
           format.html { redirect_to registered_user_users_path}
           format.js
@@ -32,10 +32,6 @@ class UsersController < ApplicationController
 
       end
     end
-  end
-
-  def registered_user
-
   end
 end
 

@@ -122,7 +122,6 @@
                 return false;
             }
             else {
-                console.log($(event).serialize());
                 $.post($(event).attr('action'), $(event).serialize(), null, "script");
             }
 
