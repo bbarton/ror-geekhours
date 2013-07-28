@@ -11,6 +11,8 @@
 /db/*.sqlite3
 /config/database.yml
 .idea
+/custom_plan.rb
+/zeus.json
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
