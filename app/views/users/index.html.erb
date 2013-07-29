@@ -31,7 +31,6 @@
             <div class="span6 videoWrapper">
               <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             </div>
-
             <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" width="460" height="305" title=""><img src="/images/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
             <div class="span2"><a class="group1"  href="http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img src="/images/IMG_4042.jpg" alt="" /> </a></div>
@@ -55,6 +54,8 @@
             </div>
           </div>
           <h2>Register for event</h2>
+          <iframe src="http://www.facebook.com/plugins/like.php?href=google.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="GeekHours registartion." data-count="horizontal" data-via="Weboniselab.com">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
           <div class="flashnotice">
             <% if flash[:notice].present? %>
                 <h5> <%=  flash[:notice] %></h5>
@@ -87,6 +88,7 @@
             <%= f.text_field :team_name,:class=>"span6", :placeholder=>"Team Name" %>
             <div class="hiddenFields">
               <%= f.fields_for :secondary_users do |sf| %>
+
                   <div class="inputs">
                     <div class="control-group small">
                       <div class="controls">
@@ -142,6 +144,12 @@
         email.add(Validate.Email);
         var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
         description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
+        var email = new LiveValidation( 'user_secondary_users_attributes_0_name', {onlyOnSubmit: true } );
+        //email.add(Validate.Email);
+        var email = new LiveValidation( 'user_secondary_users_attributes_1_name', {onlyOnSubmit: true } );
+        //email.add(Validate.Email);
+        var email = new LiveValidation( 'user_secondary_users_attributes_2_name', {onlyOnSubmit: true } );
+        //email.add(Validate.Email);
         $("#new_user").on("submit",function(event){
             event.preventDefault();
             if ($(".LV_invalid").length > 0) {
