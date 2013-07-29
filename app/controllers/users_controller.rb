@@ -1,32 +1,36 @@
 class UsersController < ApplicationController
   def index
-
-  end
-
-  def new
     @user = User.new
+    logger.info "================COMING HERE ========================"
     3.times{ @user.secondary_users.build }
-
   end
 
   def create
-    logger.info"#{params[:user][:email].inspect}"
     email = params[:user][:email].split("@")
-    if email[1].downcase == "yopmail.com" || email[1] == "mailinator.com" || email[1] == "mailcatch.com" || email[1] == "dudmail.com"
-      flash[:notice] = "Invalid email domain #{email[1]}."
-      redirect_to new_user_path
-    elsif SecondaryUser.find_by_email(params[:user][:email]).present?
-      flash[:notice] = "Email already present"
-      redirect_to users_path
-    elsif simple_captcha_valid?
-      @user = User.create(params[:user])
-      params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
-      flash[:notice] = "Thank you.Registered successfully."
-      UserMailer.welcome_instr(@user).deliver
-      redirect_to users_path
-    else
-      flash[:notice] = "Code is not valid.Please reenter the code."
-      redirect_to new_user_path
+    logger.info("1111111#{email}")
+    exist_user = User.find_by_email params[:user][:email]
+    respond_to do |format|
+      if email[1].downcase == "yopmail.com" || email[1] == "mailinator.com" || email[1] == "mailcatch.com" || email[1] == "dudmail.com"
+        logger.info("sadasdasdasdd#{email}")
+        flash[:notice] = "Invalid email domain #{email[1]}."
+        format.html {  redirect_to root_path }
+        format.js
+      else
+        @user = User.new(params[:user])
+        logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
+        params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
+      if @user.save
+          UserMailer.welcome_email(@user).deliver
+          flash[:notice] = nil
+          format.html { redirect_to registered_user_users_path}
+          format.js
+        else
+          flash[:notice] = "Email Already Exists"
+          format.html {  redirect_to root_path }
+          format.js
+        end
+
+      end
     end
   end
 end

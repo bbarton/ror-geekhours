@@ -10,16 +10,16 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery-1.8.3
+//= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require nested_form
-//= require_tree .
+//= require modernizr-2.6.2-respond-1.1.0.min
+//= require bootstrap.min
+//= require jquery.colorbox-min
+//= require jquery.scrollTo-1.4.3.1-min
+//= require livevalidation
+//= require main
+//= require jquery.placeholder.min
 
-$(document).ready(function() {
-     // alert("hello");
-//    $(".createTeam").live("click", function(){
-//        alert("hi");
-//        $("#teamWrapper").show();
-//    })
-});
+
+
+

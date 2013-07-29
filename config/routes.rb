@@ -5,6 +5,7 @@ Geekhours::Application.routes.draw do
     collection do
       get :login
       post :confirm_admin
+
     end
     member do
       get :user_details
@@ -14,12 +15,10 @@ Geekhours::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  resources :users   do
-   collection do
-     get :get_register
-     post :create_geek_account
-
-   end
+  resources :users do
+    collection do
+      get :registered_user
+    end
   end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -67,7 +66,7 @@ Geekhours::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'users#index'
+  root :to => 'users#index'
 
   # See how all your routes lay out with "rake routes"
 

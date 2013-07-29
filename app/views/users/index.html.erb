@@ -1,5 +1,136 @@
-<% if flash[:notice].present? %>
-   <h5> <%=  flash[:notice] %></h5>
-<% end %>
-<h4>Please register here</h4>
-<%= link_to "Register",get_register_users_path, :class=>"btn btn-primary"%>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div class="loader"></div>
+<img src="<%= asset_path("mainBg.jpg")%>" alt="Geek Hours" class="mainBg"/>
+<div class="container">
+  <div class="row">
+    <div class="span7 offset5 home">
+      <div class="homeInner">
+        <div class="row">
+          <div class="span3 offset2">
+            <a href="http://www.webonise.com" class="logo">Webonise</a>
+          </div>
+        </div>
+        <h1>3rd Aug 2013, Pune, India</h1>
+        <p>
+          Geek hours is a Hackathon event organised by Webonise Lab.<br> Developers/ Designers from all over Pune gather for<br> a day to build somthing useful & opensource.
+        </p>
+        <a href="#" class="rBtn">Register</a>
+      </div>
+    </div>
+    <div class="span7 offset5 gallery">
+      <div class="galleryInner">
+        <div class="row">
+          <div class="fixedRegister">
+            <div class="eventDate">3rd Auguest 2013, Pune, India</div>
+            <a href="#" class="rBtnSmall">Register</a>
+          </div>
+          <h2>From last Geek Hours</h2>
+          <div class="row galleryWrapper">
+            <div class="span6 videoWrapper">
+              <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+
+            <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" width="460" height="305" title=""><img src="/images/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img  rel="gallery" src="/images/IMG_4042.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4088.jpg" title=""><img src="/images/IMG_4088.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4108.jpg" title=""><img src="/images/IMG_4108.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4145.jpg" title=""><img src="/images/IMG_4145.jpg" alt="" /> </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span7 offset5 registerForm" id="registerForm">
+      <div class="registerFormInner">
+        <div class="row">
+          <div class="eventDate">3rd Auguest 2013, Pune, India</div>
+          <div class="row">
+            <div class="span3 offset2">
+              <a href="http://www.webonise.com" class="logo">Webonise</a>
+            </div>
+          </div>
+          <h2>Register for event</h2>
+          <div class="flashnotice">
+            <% if flash[:notice].present? %>
+                <h5> <%=  flash[:notice] %></h5>
+            <% end %>
+          </div>
+        </div>
+
+        <%= form_for @user , :remote => true do |f| %>
+            <% if @user.errors.full_messages.any? %>
+                <% @user.errors.full_messages.each do |error_message| %>
+                    <%= error_message if @user.errors.full_messages.first == error_message %>
+                <% end %>
+            <% end %>
+            </div>
+            <div class="span6 registerEmailWrap">
+              <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
+              <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
+            </div>
+            <div class="clearfix"></div>
+            <div class="span6"><a href="#" class="addMember">Add team members</a></div>
+            <%= f.text_field :team_name,:class=>"span7", :placeholder=>"Team Name" %>
+            <div class="hiddenFields">
+              <%= f.fields_for :secondary_users do |sf| %>
+                  <div class="inputs">
+                    <div class="span6">
+                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
+                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
+                    </div>
+                    <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
+                    <div class="clearfix"></div>
+                  </div>
+              <% end %>
+
+            </div>
+            <div class="clearfix"></div>
+            <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
+            <%= f.submit "Register",:class=>"rBtn" %>
+        <% end %>
+        </div>
+  </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+        $(".addMember").click(function(){
+            $("input.span7").show();
+            $(".inputs:first-child").show();
+            return false;
+        });
+        $("a.span1").click(function(){
+            $(this).parents(".inputs").next().show();
+        });
+        var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
+        username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
+        var email = new LiveValidation( 'user_email', {onlyOnSubmit: true } );
+        email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
+        email.add(Validate.Email);
+        var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
+        description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
+        $("#new_user").on("submit",function(event){
+            event.preventDefault();
+            if ($(".LV_invalid").length > 0) {
+                return false;
+            }
+            else {
+                $.post($(event).attr('action'), $(event).serialize(), null, "script");
+            }
+
+        })
+
+        $("a.group1").colorbox({rel:'group1', transition:"fade"});
+    });
+</script>
+
+<script>$('input[placeholder], textarea[placeholder]').placeholder();</script>
+
+
