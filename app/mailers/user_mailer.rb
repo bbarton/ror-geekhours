@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
 
   protected
   def setup_email(user)
-    mail(:to=>user.email,:from=> "pansingh@webonise.com",:sent_on=> Time.now,:subject=>"Geek Hours welcome email",:content_type=>"text/html")
+    mail(:to=>user.email,:sent_on=> Time.now,:subject=>"Geek Hours welcome email",:content_type=>"text/html")
   end
 end
 
