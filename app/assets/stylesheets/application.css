@@ -11,6 +11,7 @@
  *= require_self
  *= require bootstrap.min
  *= require colorbox
+ *= require jquery.fancybox
  *= require main
  *= require style
  */

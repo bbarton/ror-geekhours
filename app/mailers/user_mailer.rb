@@ -12,6 +12,7 @@ class UserMailer < ActionMailer::Base
     setup_secondary_email(secondary_user)
   end
 
+
   protected
   def setup_email(user)
     mail(:to=>user.email,:sent_on=> Time.now,:subject=>"Geek Hours welcome email",:content_type=>"text/html")
