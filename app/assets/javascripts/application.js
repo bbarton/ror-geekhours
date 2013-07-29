@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require modernizr-2.6.2-respond-1.1.0.min
 //= require jquery.colorbox-min
+//= require jquery.fancybox
 //= require jquery.scrollTo-1.4.3.1-min
 //= require livevalidation
 //= require main
