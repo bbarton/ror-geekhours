@@ -13,4 +13,5 @@ class AdminsController < ApplicationController
   def user_details
      @user = User.find(params[:id])
   end
+
 end

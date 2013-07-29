@@ -19,6 +19,8 @@
 //= require livevalidation
 //= require main
 //= require jquery.placeholder.min
+//= require button
+//= require loader
 
 
 
