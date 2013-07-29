@@ -11,6 +11,8 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem "nested_form", '0.1.1'
 gem 'delayed_job_active_record'
+gem 'delayed_job'
+gem 'daemons'
 gem "galetahub-simple_captcha", :require => "simple_captcha"
 
 

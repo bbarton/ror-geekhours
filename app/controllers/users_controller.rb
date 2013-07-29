@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
     @user = User.new
-    logger.info "================COMING HERE ========================"
     3.times{ @user.secondary_users.build }
   end
 
@@ -17,10 +16,14 @@ class UsersController < ApplicationController
         format.js
       else
         @user = User.new(params[:user])
-        logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
         params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
-      if @user.save
-          UserMailer.welcome_email(@user).delay
+        if @user.save
+          UserMailer.delay.welcome_email(@user)
+          if @user.secondary_users.present?
+            @user.secondary_users.each do |sec_user|
+              UserMailer.delay.welcome_secondary_email(sec_user)
+            end
+          end
           flash[:notice] = nil
           format.html { redirect_to registered_user_users_path}
           format.js

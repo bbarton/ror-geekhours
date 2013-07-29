@@ -80,6 +80,7 @@
             <%= f.text_field :team_name,:class=>"span7", :placeholder=>"Team Name" %>
             <div class="hiddenFields">
               <%= f.fields_for :secondary_users do |sf| %>
+
                   <div class="inputs">
                     <div class="span6">
                       <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member" %>
@@ -120,11 +121,11 @@
         var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
         description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
         var email = new LiveValidation( 'user_secondary_users_attributes_0_name', {onlyOnSubmit: true } );
-        email.add(Validate.Email);
+        //email.add(Validate.Email);
         var email = new LiveValidation( 'user_secondary_users_attributes_1_name', {onlyOnSubmit: true } );
-        email.add(Validate.Email);
+        //email.add(Validate.Email);
         var email = new LiveValidation( 'user_secondary_users_attributes_2_name', {onlyOnSubmit: true } );
-        email.add(Validate.Email);
+        //email.add(Validate.Email);
         $("#new_user").on("submit",function(event){
             event.preventDefault();
             if ($(".LV_invalid").length > 0) {
