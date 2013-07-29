@@ -1,3 +1,5 @@
+require 'mail'
+require 'csv'
 class AdminsController < ApplicationController
   def index
      if current_admin.present?
@@ -13,4 +15,5 @@ class AdminsController < ApplicationController
   def user_details
      @user = User.find(params[:id])
   end
+
 end

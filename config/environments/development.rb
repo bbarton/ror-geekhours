@@ -20,7 +20,7 @@ Geekhours::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost://3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.asset_host = 'http://localhost:3000'
-  config.action_mailer.smtp_settings = {
+  UserMailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'mail.weboniselab.com',
@@ -28,6 +28,17 @@ Geekhours::Application.configure do
       :password             => 'pansingh6186',
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
+
+  AdminMailer.smtp_settings = {
+      :address              => "smtp.sendgrid.net",
+      :port                 => 587,
+      :domain               => 'webonise.com',
+      :user_name            => 'bhuvan',
+      :password             => 'webonise6186',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
