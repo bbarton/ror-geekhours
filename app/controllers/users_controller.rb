@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         logger.info "########################{params["user"]["secondary_users_attributes"]}###################"
         params["user"]["secondary_users_attributes"].each{|key,value| @user.secondary_users.build(value)}
       if @user.save
-          UserMailer.welcome_email(@user).deliver
+          UserMailer.welcome_email(@user).delay
           flash[:notice] = nil
           format.html { redirect_to registered_user_users_path}
           format.js

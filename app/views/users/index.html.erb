@@ -55,6 +55,7 @@
             </div>
           </div>
           <h2>Register for event</h2>
+          <iframe src="http://www.facebook.com/plugins/like.php?href=google.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
           <a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="GeekHours registartion." data-count="horizontal" data-via="Weboniselab.com">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
           <div class="flashnotice">
             <% if flash[:notice].present? %>
@@ -92,7 +93,7 @@
             </div>
             <div class="clearfix"></div>
             <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
-            <%= f.submit "Register",:class=>"rBtn" %>
+            <%= f.submit "Register",:class=>"rBtn",:disable_with => "Registering....." %>
         <% end %>
       </div>
     </div>
