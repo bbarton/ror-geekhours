@@ -7,7 +7,8 @@ class UserMailer < ActionMailer::Base
       #@content_type="text/html"
   end
 
-  def welcome_secondary_email(secondary_user)
+  def welcome_secondary_email(secondary_user,user)
+    @user = user
     setup_secondary_email(secondary_user)
   end
 
