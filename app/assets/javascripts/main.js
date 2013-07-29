@@ -13,7 +13,7 @@ bgImg.css({
     height: bgImgHeight,
     left:bgImgLeft
 });
-bgImg.load(function(){
+//bgImg.load(function(){
     $('.loader').fadeOut(500);
     setTimeout(function(){
         bgImg.animate({
@@ -25,8 +25,8 @@ bgImg.load(function(){
             },1000);
         });
     },2000);
-});
-$('.rBtn').click(function(){
+//});
+$('a.rBtn').click(function(){
     $.scrollTo($('#registerForm'),{top:'10px', left:'290px', duration: 800});
 })
 $('.home, .gallery, .registerForm').css({

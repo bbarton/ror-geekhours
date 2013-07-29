@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130726095313) do
+=======
 ActiveRecord::Schema.define(:version => 20130729102607) do
+>>>>>>> 96657a7712a00221b514368f88ce99d8981c62a2
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -29,6 +33,8 @@ ActiveRecord::Schema.define(:version => 20130729102607) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
+<<<<<<< HEAD
+=======
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
     t.integer  "attempts",   :default => 0
@@ -45,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130729102607) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+>>>>>>> 96657a7712a00221b514368f88ce99d8981c62a2
   create_table "secondary_users", :force => true do |t|
     t.string   "name"
     t.string   "email"
