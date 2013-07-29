@@ -21,7 +21,7 @@ class UsersController < ApplicationController
           UserMailer.delay.welcome_email(@user)
           if @user.secondary_users.present?
             @user.secondary_users.each do |sec_user|
-              UserMailer.welcome_secondary_email(sec_user,@user.email).deliver
+              UserMailer.delay.welcome_secondary_email(sec_user,@user.email) if sec_user.present?
             end
           end
           flash[:notice] = nil
