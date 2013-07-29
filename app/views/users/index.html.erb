@@ -24,7 +24,7 @@
         <div class="row">
           <div class="fixedRegister">
             <div class="eventDate">3rd Auguest 2013, Pune, India</div>
-            <a href="#" class="rBtnSmall">Register</a>
+            <a href="#" class="rBtn rBtnSmall">Register</a>
           </div>
           <h2>From last Geek Hours</h2>
           <div class="row galleryWrapper">
@@ -54,8 +54,7 @@
             </div>
           </div>
           <h2>Register for event</h2>
-          <iframe src="http://www.facebook.com/plugins/like.php?href=google.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
-          <a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="GeekHours registartion." data-count="horizontal" data-via="Weboniselab.com">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+          <!--<a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="GeekHours registartion." data-count="horizontal" data-via="Weboniselab.com">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>-->
           <div class="flashnotice">
             <% if flash[:notice].present? %>
                 <h5> <%=  flash[:notice] %></h5>
@@ -84,7 +83,7 @@
               <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
             </div> -->
             <div class="clearfix"></div>
-            <div class="addMember"><a href="#" class="addMember">Add team members</a></div>
+            <div class="addMember"><a href="#" class="">Add team members</a></div>
             <%= f.text_field :team_name,:class=>"span6", :placeholder=>"Team Name" %>
             <div class="hiddenFields">
               <%= f.fields_for :secondary_users do |sf| %>
@@ -100,15 +99,10 @@
                         <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
                       </div>
                     </div>
-                    <!-- <div class="span6">
-                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
-                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
-                    </div> -->
-                    <a href="javascript:void(0);" class="addField"><img src="<%= asset_path("plus.png")%>"></a>
                     <div class="clearfix"></div>
                   </div>
               <% end %>
-
+              <a href="javascript:void(0);" class="addField span1" style="display: none;"><img src="<%= asset_path("plus.png")%>"></a>
             </div>
             <div class="clearfix"></div>
             <%= f.text_area :description,:class=>"span6 textareaWrapper",:placeholder=>"Tell us about your idea & your self..." %>
@@ -127,15 +121,17 @@
 
 <script>
     $(document).ready(function(){
-        $(".addMember").click(function(){
+        $(".addMember a").click(function(){
             $("input.span6").show();
             $(".inputs:first-child").show();
+            $(".span1").show();
             return false;
         });
-        $("a.addField:last-child").hide();
-        $("a.addField").click(function(){
-          $(this).hide()
-          $(this).parents(".inputs").next().show();
+        $("a.span1").click(function(){
+            var hidden_len = $(".hiddenFields").find(".inputs:hidden").length;
+            if(hidden_len == 1)
+                $(this).hide();
+            $(".hiddenFields").find(".inputs:hidden:first").show();
         });
         var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
         username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
@@ -144,12 +140,12 @@
         email.add(Validate.Email);
         var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
         description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
-        var email = new LiveValidation( 'user_secondary_users_attributes_0_name', {onlyOnSubmit: true } );
-        //email.add(Validate.Email);
-        var email = new LiveValidation( 'user_secondary_users_attributes_1_name', {onlyOnSubmit: true } );
-        //email.add(Validate.Email);
-        var email = new LiveValidation( 'user_secondary_users_attributes_2_name', {onlyOnSubmit: true } );
-        //email.add(Validate.Email);
+        var email = new LiveValidation( 'user_secondary_users_attributes_0_email', {onlyOnSubmit: true } );
+        email.add(Validate.Email);
+        var first_email = new LiveValidation( 'user_secondary_users_attributes_1_email', {onlyOnSubmit: true } );
+        first_email.add(Validate.Email);
+        var second_email = new LiveValidation( 'user_secondary_users_attributes_2_email', {onlyOnSubmit: true } );
+        second_email.add(Validate.Email);
         $("#new_user").on("submit",function(event){
             event.preventDefault();
             if ($(".LV_invalid").length > 0) {

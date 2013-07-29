@@ -13,7 +13,7 @@ bgImg.css({
     height: bgImgHeight,
     left:bgImgLeft
 });
-bgImg.load(function(){
+//bgImg.load(function(){
     $('.loader').fadeOut(500);
     setTimeout(function(){
         bgImg.animate({
@@ -25,8 +25,8 @@ bgImg.load(function(){
             },1000);
         });
     },2000);
-});
-$('.rBtn').click(function(){
+//});
+$('a.rBtn').click(function(){
     $.scrollTo($('#registerForm'),{top:'10px', left:'290px', duration: 800});
 })
 $('.home, .gallery, .registerForm').css({
@@ -41,7 +41,7 @@ $(window).scroll(function(){
     var homeHeight = $('.home').height();
     var galleryHeight = $('.gallery').height();
     var formShow = homeHeight + galleryHeight
-    console.log(scrollTop);
+    //console.log(scrollTop);
     if(scrollTop >= 100){
         $('.galleryInner').stop().animate({
             opacity:1
@@ -50,7 +50,7 @@ $(window).scroll(function(){
             opacity:0
         },1000);
     }else{
-        console.log('else');
+        //console.log('else');
         $('.galleryInner').stop().animate({
             opacity:0
         },1000);
