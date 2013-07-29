@@ -69,7 +69,7 @@
                     <%= error_message if @user.errors.full_messages.first == error_message %>
                 <% end %>
             <% end %>
-            </div>
+
             <div class="span6 registerEmailWrap">
               <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
               <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
@@ -81,8 +81,8 @@
               <%= f.fields_for :secondary_users do |sf| %>
                   <div class="inputs">
                     <div class="span6">
-                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
-                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
+                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member" %>
+                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email" %>
                     </div>
                     <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
                     <div class="clearfix"></div>
@@ -94,7 +94,8 @@
             <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
             <%= f.submit "Register",:class=>"rBtn" %>
         <% end %>
-        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -117,6 +118,12 @@
         email.add(Validate.Email);
         var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
         description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
+        var email = new LiveValidation( 'user_secondary_users_attributes_0_name', {onlyOnSubmit: true } );
+        email.add(Validate.Email);
+        var email = new LiveValidation( 'user_secondary_users_attributes_1_name', {onlyOnSubmit: true } );
+        email.add(Validate.Email);
+        var email = new LiveValidation( 'user_secondary_users_attributes_2_name', {onlyOnSubmit: true } );
+        email.add(Validate.Email);
         $("#new_user").on("submit",function(event){
             event.preventDefault();
             if ($(".LV_invalid").length > 0) {
