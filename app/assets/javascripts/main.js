@@ -41,7 +41,7 @@ $(window).scroll(function(){
     var homeHeight = $('.home').height();
     var galleryHeight = $('.gallery').height();
     var formShow = homeHeight + galleryHeight
-    console.log(scrollTop);
+    //console.log(scrollTop);
     if(scrollTop >= 100){
         $('.galleryInner').stop().animate({
             opacity:1
@@ -50,7 +50,7 @@ $(window).scroll(function(){
             opacity:0
         },1000);
     }else{
-        console.log('else');
+        //console.log('else');
         $('.galleryInner').stop().animate({
             opacity:0
         },1000);

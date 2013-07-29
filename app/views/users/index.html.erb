@@ -32,15 +32,15 @@
               <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             </div>
 
-            <div class="span2"><a class="group1" href="/assets/IMG_4027.jpg" width="460" height="305" title=""><img src="/assets/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
-            <div class="span2"><a class="group1"  href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img  rel="gallery" src="/images/IMG_4042.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4088.jpg" title=""><img src="/images/IMG_4088.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4108.jpg" title=""><img src="/images/IMG_4108.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1" href="/images/IMG_4145.jpg" title=""><img src="/images/IMG_4145.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" rel="group1" href="/assets/IMG_4027.jpg" width="460" height="305" title=""><img src="/assets/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
+            <!--<div class="span2"><a class="group1"  href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img  rel="gallery" src="/images/IMG_4042.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4088.jpg" title=""><img src="/images/IMG_4088.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4108.jpg" title=""><img src="/images/IMG_4108.jpg" alt="" /> </a></div>-->
+            <!--<div class="span2"><a class="group1" href="/images/IMG_4145.jpg" title=""><img src="/images/IMG_4145.jpg" alt="" /> </a></div>-->
           </div>
         </div>
       </div>
@@ -81,14 +81,13 @@
               <%= f.fields_for :secondary_users do |sf| %>
                   <div class="inputs">
                     <div class="span6">
-                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
-                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
+                      <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member" %>
+                      <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email" %>
                     </div>
-                    <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
                     <div class="clearfix"></div>
                   </div>
               <% end %>
-
+              <a href="javascript:void(0);" class="span1" style="display: none;"><img src="<%= asset_path("plus.png")%>"></a>
             </div>
             <div class="clearfix"></div>
             <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
@@ -105,10 +104,14 @@
         $(".addMember").click(function(){
             $("input.span7").show();
             $(".inputs:first-child").show();
+            $(".span1").show();
             return false;
         });
         $("a.span1").click(function(){
-            $(this).parents(".inputs").next().show();
+            var hidden_len = $(".hiddenFields").find(".inputs:hidden").length;
+            if(hidden_len == 1)
+                $(this).hide();
+            $(".hiddenFields").find(".inputs:hidden:first").show();
         });
         var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
         username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
@@ -127,7 +130,6 @@
             }
 
         })
-
         $("a.group1").colorbox({rel:'group1', transition:"fade"});
     });
 </script>
