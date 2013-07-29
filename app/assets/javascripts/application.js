@@ -16,6 +16,7 @@
 //= require jquery.colorbox-min
 //= require jquery.fancybox
 //= require jquery.scrollTo-1.4.3.1-min
+//= require jquery.easing.1.3
 //= require livevalidation
 //= require main
 //= require jquery.placeholder.min
