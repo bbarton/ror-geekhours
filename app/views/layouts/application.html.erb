@@ -13,7 +13,9 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
-
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 
   </head>
   <body>
@@ -21,7 +23,13 @@
       <%= yield %>
     <!-- Javascripts
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+   Put these scripts at the end of your page. They contain the parameter preferences in JSON format.
+
+<script type="text/javascript">stLight.options({publisher: "6b87d079-6207-4dd9-a0e2-c288047b6ff7", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "6b87d079-6207-4dd9-a0e2-c288047b6ff7", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "googleplus"]}};
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script> <!-- Placed at the end of the document so the pages load faster -->
 
 
   </body>

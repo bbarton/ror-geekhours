@@ -33,8 +33,8 @@
             </div>
 
             <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" width="460" height="305" title=""><img src="/images/IMG_4027.jpg" width="460" height="305" alt="" /> </a></div>
-            <div class="span2"><a class="group1"  href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
-            <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img  rel="gallery" src="/images/IMG_4042.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="http://www.jacklmoore.com/colorbox/content/ohoopee2.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1"  href="/images/IMG_4042.jpg" title=""><img src="/images/IMG_4042.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>
             <div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>
@@ -68,31 +68,55 @@
                     <%= error_message if @user.errors.full_messages.first == error_message %>
                 <% end %>
             <% end %>
+            <div class="control-group small">
+              <div class="controls">
+                <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
+              </div>
             </div>
-            <div class="span6 registerEmailWrap">
+            <div class="control-group small">
+              <div class="controls">
+                <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
+              </div>
+            </div>
+            <!-- <div class="span6 registerEmailWrap">
               <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
               <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
-            </div>
+            </div> -->
             <div class="clearfix"></div>
-            <div class="span6"><a href="#" class="addMember">Add team members</a></div>
-            <%= f.text_field :team_name,:class=>"span7", :placeholder=>"Team Name" %>
+            <div class="addMember"><a href="#" class="addMember">Add team members</a></div>
+            <%= f.text_field :team_name,:class=>"span6", :placeholder=>"Team Name" %>
             <div class="hiddenFields">
               <%= f.fields_for :secondary_users do |sf| %>
                   <div class="inputs">
-                    <div class="span6">
+                    <div class="control-group small">
+                      <div class="controls">
+                        <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
+                      </div>
+                    </div>
+                    <div class="control-group small">
+                      <div class="controls">
+                        <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
+                      </div>
+                    </div>
+                    <!-- <div class="span6">
                       <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member1" %>
                       <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email1" %>
-                    </div>
-                    <a href="javascript:void(0);" class="span1"><img src="<%= asset_path("plus.png")%>"></a>
+                    </div> -->
+                    <a href="javascript:void(0);" class="addField"><img src="<%= asset_path("plus.png")%>"></a>
                     <div class="clearfix"></div>
                   </div>
               <% end %>
 
             </div>
             <div class="clearfix"></div>
-            <%= f.text_area :description,:class=>"span4",:placeholder=>"Tell us about your idea & your self..." %>
+            <%= f.text_area :description,:class=>"span6 textareaWrapper",:placeholder=>"Tell us about your idea & your self..." %>
+            <div class="row">
+            <div class="span6">
             <%= f.submit "Register",:class=>"rBtn" %>
+            </div>
+            </div>
         <% end %>
+            </div>
         </div>
   </div>
 </div>
@@ -102,12 +126,14 @@
 <script>
     $(document).ready(function(){
         $(".addMember").click(function(){
-            $("input.span7").show();
+            $("input.span6").show();
             $(".inputs:first-child").show();
             return false;
         });
-        $("a.span1").click(function(){
-            $(this).parents(".inputs").next().show();
+        $("a.addField:last-child").hide();
+        $("a.addField").click(function(){
+          $(this).hide()
+          $(this).parents(".inputs").next().show();
         });
         var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
         username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
@@ -127,10 +153,14 @@
 
         })
 
-        $("a.group1").colorbox({rel:'group1', transition:"fade"});
+        // $("a.group1").colorbox({rel:'geekHours', transition:"fade"});
+        $("a.group1").colorbox({iframe:true});
     });
 </script>
 
 <script>$('input[placeholder], textarea[placeholder]').placeholder();</script>
+
+
+
 
 

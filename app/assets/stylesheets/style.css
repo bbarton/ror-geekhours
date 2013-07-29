@@ -1,6 +1,6 @@
-body{
+/*body{
     padding: 50px 0 0;
-}
+}*/
 #teamWrapper .control-label {
     margin-right: 5px;
 }
@@ -90,8 +90,5 @@ body{
     margin-bottom: 0;
 }
 
-.registerEmailWrap .field_with_errors {
-    background: none;
-    float: right;
-}
+
 
