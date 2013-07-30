@@ -8,15 +8,12 @@ class Admin < ActiveRecord::Base
 
   def self.send_invite
     csv_data = File.open("#{Rails.public_path}/mailer_list.csv")
-    email_list = []
-    csv_data.each do |email|
-     email_list << email
+    puts csv_data
+    a = csv_data.to_a
+    final_list = a.first.split(",")
+    final_list.each do |email|
+      AdminMailer.send_invite(email).deliver
     end
-    email_list.each do |mail|
-      AdminMailer.send_invite(mail).deliver
-    end
-
-
   end
 
   end
