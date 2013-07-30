@@ -20,15 +20,8 @@ Geekhours::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost://3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.asset_host = 'http://localhost:3000'
-  config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => 'mail.weboniselab.com',
-      :user_name            => 'pansingh@weboniselab.com',
-      :password             => 'pansingh6186',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true  }
-
+  UserMailer.smtp_settings = Settings.user_mailer
+  AdminMailer.smtp_settings = Settings.admin_mailer
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -48,3 +41,24 @@ Geekhours::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+=begin
+UserMailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'mail.weboniselab.com',
+    :user_name            => 'pansingh@weboniselab.com',
+    :password             => 'pansingh6186',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+
+AdminMailer.smtp_settings = {
+    :address              => "smtp.sendgrid.net",
+    :port                 => 587,
+    :domain               => 'webonise.com',
+    :user_name            => 'bhuvan',
+    :password             => 'webonise6186',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+
+}
+=end

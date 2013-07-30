@@ -58,6 +58,9 @@ Geekhours::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.action_mailer.default_url_options = {:host => "contest@webonise.com.com"}
   config.action_mailer.delivery_method = :sendmail
+
+
+
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners

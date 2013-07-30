@@ -1,3 +1,5 @@
+require 'mail'
+require 'csv'
 class AdminsController < ApplicationController
   def index
      if current_admin.present?
