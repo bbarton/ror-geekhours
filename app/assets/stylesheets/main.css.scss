@@ -50,15 +50,18 @@ h1,h2 {
     height: 32px;
     width: 220px;
     background: url("logo.png");
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     display: block;
     text-indent: -5000px;
 }
 .home .logo {
-    margin-top: 130px;
+    margin-top: 0px;
 }
 .home p {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
+}
+.home p.small {
+    margin: 20px 0;
 }
 .rBtn,.rBtnSmall, .rBtn:hover, input[type="submit"] {
     width: 250px;
@@ -176,6 +179,9 @@ form {
 }
 .textareaWrapper {
     margin-right:60px;
+}
+.whenWhere .span3 {
+    width:240px;
 }
 
 
