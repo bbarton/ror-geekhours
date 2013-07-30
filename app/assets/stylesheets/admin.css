@@ -10,9 +10,22 @@
  *
  *= require_self
  *= require bootstrap.min
- *= require colorbox
- *= require jquery.fancybox
- *= require main
- *= require style
- *= require admin
  */
+
+
+body{
+    padding: 50px 0 0;
+}
+.formDetails h4{
+    margin-left: 77px;
+}
+.formDetails {
+    padding: 50px;
+    border: 2px solid #cccccc;
+}
+.formDetails .controls {
+    line-height: 30px;
+}
+.formDetails label {
+    font-weight: bold;
+}
