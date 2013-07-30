@@ -57,21 +57,9 @@ Geekhours::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.action_mailer.default_url_options = {:host => "contest@webonise.com.com"}
-  #config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :sendmail
 
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => "contest@webonise.com.com" }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.asset_host = 'http://geekhours.webonise.com'
-  UserMailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => 'mail.weboniselab.com',
-      :user_name            => 'pansingh@weboniselab.com',
-      :password             => 'pansingh6186',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true  }
+
 
   config.i18n.fallbacks = true
 
