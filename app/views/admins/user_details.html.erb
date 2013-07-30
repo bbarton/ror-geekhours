@@ -1,7 +1,9 @@
+<%= link_to "Back",admins_path %>
 <div class="pull-right">
   <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
 </div>
-  <form class="form-horizontal formDetails">
+<div class="container">
+<form class="form-horizontal formDetails span5 offset1">
     <div class="control-group">
       <label class="control-label" for="inputEmail">Team Name :</label>
       <div class="controls">
@@ -22,29 +24,29 @@
     </div>
     <h4>Team Members</h4>
     <div class="teamMembers">
-       <% if @user.secondary_users.present? %>
-      <% @user.secondary_users.each do |u| %>
-          <div class="control-group">
+      <% if @user.secondary_users.present? %>
+          <% @user.secondary_users.each do |u| %>
+              <div class="control-group">
             <label class="control-label" for="inputEmail">Member Name :</label>
             <div class="controls">
               <%= u.name %>
             </div>
           </div>
-          <div class="control-group">
+              <div class="control-group">
             <label class="control-label" for="inputEmail">Member Email :</label>
             <div class="controls">
               <%= u.email %>
             </div>
           </div>
 
-      <% end %>
-          <% else %>
+    <% end %>
+    <% else %>
           <div class="control-group">
             <div class="controls">
               Individual
             </div>
           </div>
-       <% end %>
+    <% end %>
     </div>
 
     <div class="control-group">
@@ -53,7 +55,5 @@
         <%= @user.description %>
       </div>
     </div>
-    </form>
-
-
-<%= link_to "Back",admins_path %>
+  </form>
+</div>

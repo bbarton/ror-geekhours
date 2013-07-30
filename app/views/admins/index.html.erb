@@ -2,7 +2,7 @@
     <%=  flash[:success] %>
 <%end%>
 <div class="pull-right">
-    <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
+  <%= link_to "logout",  destroy_admin_session_path, method: :delete %>
 </div>
 
 <table class = "table table-bordered userInfo" >
@@ -12,6 +12,7 @@
     <th> Geek Email</th>
     <th>Team Name </th>
     <th> Created At </th>
+    <th> Delete user </th>
   </tr>
   </thead>
   <tbody>
@@ -26,8 +27,8 @@
         <%end%>
 
         <td><%=user.created_at.strftime("%d %b. %Y") %> </td>
+        <td><%= link_to "Delete", delete_user_admin_path(user), :class=>"delete-user"  %></td>
       </tr>
   <%end%>
   </tbody>
 </table>
-
