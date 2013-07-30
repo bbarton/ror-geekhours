@@ -1,6 +1,7 @@
 class UserMailer < ActionMailer::Base
   default from: "contest@webonise.com"
   def welcome_email(user)
+    @username = user.name
      setup_email(user)
       #@subject     = "Geek Hours"
       #@body = "http://localhost:3000"
