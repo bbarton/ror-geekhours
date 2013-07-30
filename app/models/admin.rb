@@ -11,9 +11,11 @@ class Admin < ActiveRecord::Base
     puts csv_data
     a = csv_data.to_a
     final_list = a.first.split(",")
+    puts final_list
     final_list.each do |email|
+      puts email
       AdminMailer.send_invite(email).deliver
     end
   end
 
-  end
+end

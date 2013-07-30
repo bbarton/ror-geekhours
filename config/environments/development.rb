@@ -42,24 +42,3 @@ Geekhours::Application.configure do
   config.assets.debug = true
 end
 APP_ASSETS_URL = "http://geekhours.webonise.com/assets/"
-=begin
-UserMailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'mail.weboniselab.com',
-    :user_name            => 'pansingh@weboniselab.com',
-    :password             => 'pansingh6186',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
-
-AdminMailer.smtp_settings = {
-    :address              => "smtp.sendgrid.net",
-    :port                 => 587,
-    :domain               => 'webonise.com',
-    :user_name            => 'bhuvan',
-    :password             => 'webonise6186',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true
-
-}
-=end
