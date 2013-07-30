@@ -56,9 +56,15 @@ Geekhours::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
-  config.action_mailer.default_url_options = {:host => "contest@webonise.com.com"}
-  config.action_mailer.delivery_method = :sendmail
+  #config.action_mailer.default_url_options = {:host => "contest@webonise.com.com"}
+  #config.action_mailer.delivery_method = :sendmail
 
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { :host => 'contest@webonise.com.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.asset_host = 'http://geekhours.webonise.com'
+  UserMailer.smtp_settings = Settings.user_mailer
 
 
   config.i18n.fallbacks = true
@@ -70,3 +76,5 @@ Geekhours::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
+
+APP_ASSETS_URL = "http://geekhours.webonise.com/assets/"

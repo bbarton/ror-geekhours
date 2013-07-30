@@ -41,6 +41,7 @@ Geekhours::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+APP_ASSETS_URL = "http://geekhours.webonise.com/assets/"
 =begin
 UserMailer.smtp_settings = {
     :address              => "smtp.gmail.com",
