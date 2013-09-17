@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Geek Hours</title>
+
+  <!-- Example CSS and scripts: -->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <script src="js/jquery1.9.1.min.js"></script>
+  <script src="js/full-screen-image.js"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $(".slide").fullScreenImage({
+              imageWidth: 		1600,
+              imageHeight: 		800
+          });
+
+
+
+      });
+  </script>
+</head>
+<body class="comingSoon">
+<div class="slide">
+  <img class="fsi" src="/assets/bg-img.png" alt="test" />
+  <div class="comingSoonContent">
+    <h1>Geek hours... will be back soon!</h1>
+    <%= form_for @guest_user , :url => "/users/create_guest_user" do |f| %>
+
+        <div class="emailInput">
+          <div class="inputWrapper">
+           <%= f.text_field :email, :placeholder=>"Enter email & get updates", :id => "email_field"  %>
+            <% if @guest_user.errors.any? %>
+                <% @guest_user.errors.messages.each do |error_message| %>
+                    <div class="errorMessage"><%= error_message[1][0]%></div>
+                <% end %>
+            <% end %>
+          </div>
+
+          <button class="submit">Done</button>
+        </div>
+
+        <script>
+            var email = new LiveValidation( 'email_field', {onlyOnSubmit: true } );
+            email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
+            email.invalidClass = "errorMessage";
+            email.add(Validate.Email);
+        </script>
+    <% end %>
+    <ul class="socialLinks">
+      <li>
+        <span>Follow us on: </span>
+        <a href="https://twitter.com/GeekHours" class="twitterIcon" target="_blank"></a>
+      </li>
+      <li>
+        <span>Like us on: </span>
+        <a href="https://www.facebook.com/geekhours" class="facebookIcon" target="_blank"></a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+</body>
+</html>

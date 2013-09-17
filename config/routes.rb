@@ -20,8 +20,13 @@ Geekhours::Application.routes.draw do
   resources :users do
     collection do
       get :registered_user
+      get :guest_user
+      post :create_guest_user
     end
   end
+  match 'thank_you' => "users#thank_you", :as => :thank_you
+
+  #match 'thank_you' => "users#thank_you", :as => :thank_you
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -68,7 +73,7 @@ Geekhours::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'users#index'
+  root :to => 'users#guest_user'
 
   # See how all your routes lay out with "rake routes"
 

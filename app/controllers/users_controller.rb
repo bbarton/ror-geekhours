@@ -33,6 +33,25 @@ class UsersController < ApplicationController
 
       end
     end
+
   end
+
+  def guest_user
+    @guest_user = GuestUser.new
+  end
+
+  def create_guest_user
+    @guest_user = GuestUser.new(params[:guest_user])
+    if @guest_user.save
+      redirect_to thank_you_path
+    else
+      render :action => "guest_user", :alert => "User can't be save'"
+    end
+  end
+
+  def thank_you
+
+  end
+
 end
 
