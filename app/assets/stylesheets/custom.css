@@ -1,0 +1,472 @@
+/* line 2, ../sass/custom.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/*@font-face {
+  font-family: "quicksand_regular";
+  src: url("../font/quicksandbold-regular/quicksand_bold-webfont.eot");
+  src: url("../font/quicksandbold-regular/quicksand_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../font/quicksandbold-regular/quicksand_bold-webfont.woff") format("ttf"), url("../font/quicksandbold-regular/quicksand_bold-webfont.ttf") format("truetype"), url("../font/quicksandbold-regular/quicksand_bold-webfont.svg#svgFontName") format("svg");
+}
+
+@font-face {
+  font-family: "rbno2_lightregular";
+  src: url("../font/RBNo2/rbno2light-webfont.eot");
+  src: url("../font/RBNo2/rbno2light-webfont.eot?#iefix") format("embedded-opentype"), url("../font/RBNo2/rbno2light-webfont.woff") format("ttf"), url("../font/RBNo2/rbno2light-webfont.ttf") format("truetype"), url("../font/RBNo2/rbno2light-webfont.svg#svgFontName") format("svg");
+}
+
+@font-face {
+  font-family: "quicksandbook-regular";
+  src: url("../font/quicksandbook-regular/quicksand_book-webfont.eot");
+  src: url("../font/quicksandbook-regular/quicksand_book-webfont.eot?#iefix") format("embedded-opentype"), url("../font/quicksandbook-regular/quicksand_book-webfont.woff") format("ttf"), url("../font/quicksandbook-regular/quicksand_book-webfont.ttf") format("truetype"), url("../font/quicksandbook-regular/quicksand_book-webfont.svg#svgFontName") format("svg");
+}
+
+@font-face {
+  font-family: "quicksandbold";
+  src: url("../font/quicksandbold-regular/quicksand_bold-webfont.eot");
+  src: url("../font/quicksandbold-regular/quicksand_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../font/quicksandbold-regular/quicksand_bold-webfont.woff") format("woff"), url("../font/quicksandbold-regular/quicksand_bold-webfont.ttf") format("truetype"), url("../font/quicksandbold-regular/quicksand_bold-webfont.svg#quicksandbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}*/
+
+/* line 39, ../sass/custom.sass */
+.clearfix {
+  clear: both;
+}
+
+/* line 41, ../sass/custom.sass */
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 45, ../sass/custom.sass */
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 50, ../sass/custom.sass */
+body {
+  font-size: 16px;
+  color: #231f20;
+  background-color: white;
+  font-family: quicksandbook-regular, Arial, "sans serif";
+  height: 100%;
+  min-width: 1024px;
+  /*overflow: hidden;*/
+}
+.clear {
+  clear: both;
+}
+/* line 56, ../sass/custom.sass */
+body a {
+  text-decoration: none;
+  color: #bababa;
+  out-line: none;
+}
+
+/* line 60, ../sass/custom.sass */
+.container {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* line 65, ../sass/custom.sass */
+.container:after, .container:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 69, ../sass/custom.sass */
+.geekImage {
+  /*background: url("../images/geekBgImage.png") no-repeat center black;*/
+  background: url("bgImage.jpg") no-repeat center black;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+}
+/* line 75, ../sass/custom.sass */
+.geekImage .johnyCoderCont, .geekImage .landingPage {
+  /*background-color: rgba(0, 0, 0, 0.8);*/
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.landingPage {
+  overflow: hidden;
+  opacity: 0;
+  z-index: 0;
+}
+/* line 80, ../sass/custom.sass */
+.geekImage .johnyCoder {
+  width: 620px;
+  height: 480px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -310px;
+  margin-top: -240px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  z-index: 1;
+}
+/* line 90, ../sass/custom.sass */
+.geekImage .johnyCoderHeading {
+  width: 100%;
+  height: 132px;
+  border-bottom: 1px solid #77dd00;
+  font: 20px/30px "robotoRegular", "quicksandbook-regular";
+  color: white;
+  text-transform: uppercase;
+}
+/* line 97, ../sass/custom.sass */
+.geekImage .johnyCoderHeading .text {
+  display: inline-block;
+  top: 85px;
+  position: absolute;
+  left: 106px;
+}
+/* line 102, ../sass/custom.sass */
+.geekImage .johnyCoderLogo {
+  display: inline-block;
+  background: url("spriteIcons.png") no-repeat scroll 0px 0px;
+  width: 50px;
+  height: 90px;
+}
+/* line 107, ../sass/custom.sass */
+.geekImage .johnyCoderLogoCont {
+  margin-top: 42px;
+  margin-left: 60px;
+  display: inline-block;
+}
+/* line 111, ../sass/custom.sass */
+.geekImage .enterTheWorld {
+  padding-top: 50px;
+}
+/* line 113, ../sass/custom.sass */
+.geekImage .enterTheWorld h3 {
+  font-family: robotolight;
+  font-size: 30px;
+  color: #cccccc;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+
+}
+/* line 120, ../sass/custom.sass */
+.geekImage .enterTheWorld h4 {
+  font-family: robotolight;
+  font-size: 20px;
+  color: #999999;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+/* line 127, ../sass/custom.sass */
+.geekImage .enterTheWorld h5 {
+  font-family: robotolight;
+  font-size: 14px;
+  color: #777777;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.dobForm ul {
+  display: block;
+  width: 300px;
+  margin: 0 auto 40px;
+}
+.dobForm li {
+  list-style: none;
+  float: left;
+}
+.dobForm li.clear {
+  float: none;
+  clear: both;
+}
+.dobForm input {
+  width: 58px;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid #666666;
+  border-radius: 3px;
+  color: #bbb;
+  height: 28px;
+  line-height: 28px;
+  font-size: 20px;
+  margin-right: 15px;
+  text-align: center;
+  font-family: 'robotobold';
+}
+.dobForm input.year {
+  width: 98px;
+  margin-right: 0;
+}
+input.btn, a.btn {
+  border-radius: 3px;
+  height: 40px;
+  width: 140px;
+  font-size: 22px;
+  line-height: 40px;
+  display: block;
+  margin: 0 auto;
+  color: #000;
+  background: #77dd00;
+  padding: 0;
+  border: 0;
+  font-family: 'robotobold';
+  cursor: pointer;
+  text-align: center;
+}
+.eventWrapper {
+  margin-bottom: 280px;
+}
+.eventDetails {
+  position: absolute;
+  margin-left: -250px;
+  margin-top: -95px;
+  width: 660px;
+  top: 60%;
+  left: 50%;
+}
+.eventDetails .geekLogo {
+  height: 130px;
+  width: 130px;
+  /*background:url(../images/geekLogo.png);*/
+  margin-right: 20px;
+  float: left;
+}
+.geekLogo.absolute {
+  height: 130px;
+  width: 130px;
+  padding:0 530px 61px 0;
+  background:url("geekLogo.png") no-repeat;
+  float: left;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -95px;
+}
+.eventDetails .info {
+  width: 500px;
+  float: left;
+}
+.info h4 {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: 'robotobold';
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+sup {
+  vertical-align: super;
+  font-size: smaller;
+  font-size: 14px;
+}
+.info p {
+  font-size: 14px;
+  line-height: 22px;
+  opacity: 0.5;
+  color: #fff;
+  margin-bottom: 35px;
+  font-family: 'robotoregular';
+}
+.info .btn {
+  float: left;
+  margin-right: 20px;
+  width: 120px;
+}
+.btn.tBtn {
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  width: auto;
+  padding: 0 10px;
+  font-family: 'robotoregular';
+  height: 38px;
+  line-height: 38px;
+}
+.eventWrapper {
+  position: relative;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 70px;
+  padding-top: 42px;
+  border-top: 1px solid #77dd00;
+  width: 100%;
+}
+.footer a.weboniseLogo {
+  height: 22px;
+  width: 22px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background: url("weboniseLogo.png");
+}
+.footer .copy {
+    font-family: 'robotolight';
+    font-size: 12px;
+    color: #fff;
+    opacity: 0.3;
+    text-align: center;
+    line-height: 14px;
+}
+.johnnieCoder {
+  height: 164px;
+  width: 300px;
+  position: absolute;
+  bottom: 113px;
+  background: url("johnnieLogo.png");
+  margin-left: -150px;
+  left: 50%;
+
+}
+.registerWrapper, .galleryWrapper {
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: -70%;
+  /*overflow: auto;*/
+}
+.galleryWrapper {
+  left: auto;
+  right: -70%;
+}
+.registerWrapper .scrollWrapper, .galleryWrapper .scrollWrapper {
+  overflow: auto;
+}
+.registerInner{
+  /*float: right;*/
+  /*margin-right: 80px;*/
+  margin-top: 118px;
+  margin-bottom: 20px;
+  width: 380px;
+}
+.registerInner .heading {
+  font-size: 24px;
+  line-height: 64px;
+  color: #222222;
+  font-family: 'robotolight';
+  margin-bottom: 40px;
+}
+.heading span {
+  float: left;
+}
+
+.heading span.logo {
+  height: 64px;
+  width: 64px;
+  margin: 0 8px;
+  background: url("registerGeekLogo.png");
+}
+.registerWrapper input[type="text"],.registerWrapper textarea {
+  font-family: 'robotoregular';
+  font-size: 18px;
+  width: 380px;
+  line-height: 20px;
+  padding: 9px 0;
+  border: none;
+  border-bottom: 1px solid rgba(102,102,102,.2);
+  margin-bottom: 16px;
+  color: #b2b2b2;
+}
+.registerWrapper textarea {
+  background: url("textareaBg.jpg");
+  border: none;
+  height: 126px;
+  line-height: 42px;
+  padding: 0;
+  background-attachment: local;
+  resize:none;
+}
+.registerWrapper a.cross, .galleryWrapper a.cross {
+  height:20px;
+  width: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: url("cross.png");
+  z-index: 1000;
+  cursor: pointer;
+}
+.registerWrapper .btn {
+  margin-left: 0;
+}
+.galleryInner {
+  width: 540px;
+  margin-left: 80px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.galleryInner .heading {
+  font-size: 24px;
+  line-height: 40px;
+  color: #222222;
+  font-family: 'robotolight';
+  margin-bottom: 20px;
+}
+#slideshow-1{
+  margin-bottom: 5px;
+}
+/*#slideshow-2 .cycle-slide-active{
+  width: 100px;
+  }*/
+#slideshow-2 .cycle-slide {
+  width: 104px;
+  /*height: 80px;*/
+  margin-right: 5px;
+}
+#slideshow-2 .cycle-slide-active img {
+  border:2px solid #77dd00;
+  width: 102px;
+}
+
+#slideshow-2 {
+    position: relative;
+}
+
+#slideshow-2 .cycle-prev {
+    background: url("prev-arrow.png") no-repeat center;
+    width: 25px;
+    height: 35px;
+    display: block;
+    text-indent: -999999px;
+    position: absolute;
+    top: 20px;
+    left: -35px;
+}
+
+#slideshow-2 .cycle-next {
+    background: url("next-arrow.png") no-repeat center;
+    width: 25px;
+    height: 35px;
+    display: block;
+    text-indent: -999999px;
+    position: absolute;
+    top: 20px;
+    right: -35px;
+}
+

@@ -1,0 +1,189 @@
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div class="loader"></div>
+<img src="<%= asset_path("mainBg.jpg")%>" alt="Geek Hours" class="mainBg"/>
+<div class="container">
+  <div class="row">
+    <div class="span7 offset5 home">
+      <div class="homeInner">
+        <div class="row">
+          <div class="span3 offset2">
+            <a href="http://www.webonise.com" class="logo">Webonise</a>
+          </div>
+        </div>
+        <!-- <p>Webonise Lab is back with the 18 hours hack fest that gets underway on</p> -->
+        <!-- <h1>Saturday, 3rd of August</h1> -->
+        <!-- <h3> Sat 11:00am to Sun 06:00am </h3> -->
+        <!-- <p>and would run up till the sun rises on</p> -->
+        <!-- <h3>Sunday, 4th of August</h3> -->
+        <p>
+          Webonise Lab calls the geek inside you, to rise up and create. An <strong>18 hour</strong> never wrecking, extreme hackathon that will bring out the innovative you.<br><br>
+
+          The lines are drawn, the race is on, send us your killer idea and be part of the most awaited hack of the year
+        </p>
+        <h1>'Geek Hours 2013'</h1>
+        <div class="row whenWhere">
+          <div class="span3">
+            <strong>Where:</strong><br> Webonise Lab Pvt Ltd, <br>GaloreTech IT Park Survey No. 22, <br>3rd Floor Behind Maratha Mandir,<br>Bavdhan Khurd, Tal. Mulshi, <br>Pune- 411021.
+          </div>
+          <div class="span3">
+            <strong>When:</strong><br> 3rd of August - 11:00 AM IST till <br>4th of August - 6:00 AM IST
+          </div>
+        </div>
+        <p class="small">Ready to lock horns?</p>
+        <a href="#" class="rBtn">Register</a>
+        <p class="small">*Entry by invite only. Registration <strong>closes</strong> on <strong>Thursday, 1st August, 11:59 PM</strong></p>
+      </div>
+    </div>
+    <div class="span7 offset5 gallery">
+      <div class="galleryInner">
+        <div class="row">
+          <div class="fixedRegister">
+            <div class="eventDate">3rd August 2013, Pune, India</div>
+            <a href="#" class="rBtnSmall">Register</a>
+          </div>
+          <h2>From last Geek Hours</h2>
+          <div class="row galleryWrapper">
+            <div class="span6 videoWrapper">
+              <iframe src="http://player.vimeo.com/video/19697979?title=0&amp;byline=0&amp;portrait=0&amp;color=c9ff23" width="460" height="305" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </div>
+            <div class="span2"><a class="group1" href="/images/IMG_4027.jpg" title=""><img src="/images/IMG_4027.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4028.jpg" title=""><img src="/images/IMG_4028.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4042.jpg" title=""><img src="/images/IMG_4042.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4047.jpg" title=""><img src="/images/IMG_4047.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4064.jpg" title=""><img src="/images/IMG_4064.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4084.jpg" title=""><img src="/images/IMG_4084.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4088.jpg" title=""><img src="/images/IMG_4088.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4108.jpg" title=""><img src="/images/IMG_4108.jpg" alt="" /> </a></div>
+            <div class="span2"><a class="group1" href="/images/IMG_4145.jpg" title=""><img src="/images/IMG_4145.jpg" alt="" /> </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span7 offset5 registerForm" id="registerForm">
+      <div class="registerFormInner">
+        <div class="row">
+          <div class="eventDate">3rd August 2013, Pune, India</div>
+          <div class="row">
+            <div class="span3 offset2">
+              <a href="http://www.webonise.com" class="logo">Webonise</a>
+            </div>
+          </div>
+          <h2>Register for event</h2>
+          
+          <div class="flashnotice">
+            <% if flash[:notice].present? %>
+                <h5> <%=  flash[:notice] %></h5>
+            <% end %>
+          </div>
+        </div>
+
+        <%= form_for @user , :remote => true do |f| %>
+            <% if @user.errors.full_messages.any? %>
+                <% @user.errors.full_messages.each do |error_message| %>
+                    <%= error_message if @user.errors.full_messages.first == error_message %>
+                <% end %>
+            <% end %>
+            <div class="control-group small">
+              <div class="controls">
+                <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
+              </div>
+            </div>
+            <div class="control-group small">
+              <div class="controls">
+                <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
+              </div>
+            </div>
+            <!-- <div class="span6 registerEmailWrap">
+              <%= f.text_field :name,:class=>"span3", :placeholder=>"Name" %>
+              <%= f.text_field :email,:class=>"span3", :placeholder=>"Email"  %>
+            </div> -->
+            <div class="clearfix"></div>
+            <div class="addMember"><a href="#" class="">Add team members</a></div>
+            <%= f.text_field :team_name,:class=>"span6", :placeholder=>"Team Name" %>
+            <div class="hiddenFields">
+              <%= f.fields_for :secondary_users do |sf| %>
+
+                  <div class="inputs">
+                    <div class="control-group small">
+                      <div class="controls">
+                        <%= sf.text_field :name,:class=>"span3", :placeholder=>"Member" %>
+                      </div>
+                    </div>
+                    <div class="control-group small">
+                      <div class="controls">
+                        <%= sf.text_field :email,:class=>"span3", :placeholder=>"Email" %>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+              <% end %>
+              <a href="javascript:void(0);" class="addField span1" style="display: none;"><img src="<%= asset_path("plus.png")%>"></a>
+            </div>
+            <div class="clearfix"></div>
+            <%= f.text_area :description,:class=>"span6 textareaWrapper",:placeholder=>"Tell us about your idea & your self..." %>
+            <div class="row">
+            <div class="span6">
+            <%= f.submit "Register",:class=>"rBtn" %>
+            </div>
+            </div>
+        <% end %>
+            </div>
+        </div>
+  </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function(){
+        $(".addMember a").click(function(){
+            $("input.span6").show();
+            $(".inputs:first-child").show();
+            $(".span1").show();
+            return false;
+        });
+        $("a.span1").click(function(){
+            var hidden_len = $(".hiddenFields").find(".inputs:hidden").length;
+            if(hidden_len == 1)
+                $(this).hide();
+            $(".hiddenFields").find(".inputs:hidden:first").show();
+        });
+        var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
+        username.add( Validate.Presence,{failureMessage:"Name can not be empty."}  );
+        var email = new LiveValidation( 'user_email', {onlyOnSubmit: true } );
+        email.add( Validate.Presence,{failureMessage:"Email can not be empty."}  );
+        email.add(Validate.Email);
+        var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
+        description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
+        var email = new LiveValidation( 'user_secondary_users_attributes_0_email', {onlyOnSubmit: true } );
+        email.add(Validate.Email);
+        var first_email = new LiveValidation( 'user_secondary_users_attributes_1_email', {onlyOnSubmit: true } );
+        first_email.add(Validate.Email);
+        var second_email = new LiveValidation( 'user_secondary_users_attributes_2_email', {onlyOnSubmit: true } );
+        second_email.add(Validate.Email);
+        $("#new_user").on("submit",function(event){
+            event.preventDefault();
+            if ($(".LV_invalid").length > 0) {
+                return false;
+            }
+            else {
+                $.post($(event).attr('action'), $(event).serialize(), null, "script");
+            }
+
+        })
+
+        // $("a.group1").colorbox({rel:'geekHours', transition:"fade"});
+        //$("a.group1").colorbox({iframe:true});
+        $('a.group1').fancybox();
+    });
+</script>
+
+<script>$('input[placeholder], textarea[placeholder]').placeholder();</script>
+
+
+
+
+
+

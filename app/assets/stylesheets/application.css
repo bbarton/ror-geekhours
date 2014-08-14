@@ -9,10 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap.min
- *= require colorbox
- *= require jquery.fancybox
- *= require main
- *= require style
- *= require admin
+ * require bootstrap.min
+ * require colorbox
+ * require jquery.fancybox
+ * require main
+ * require style
+ * require admin
+ *= require mass_reset
+ *= require jquery.mCustomScrollbar
+ *= require custom
  */
