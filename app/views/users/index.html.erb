@@ -18,19 +18,21 @@
         <h5>
           (if you didn’t get it, nevermind, just enter your D.O.B.)
         </h5>
-        <form class="dobForm">
+        <form class="dobForm" id="dateForm">
           <ul>
             <li>
-              <input placeholder='DD' type='text'>
+              <%= select_tag 'DD', options_for_select((1..31)), :prompt => "DD", :id => "day"%>
             </li>
             <li>
-              <input placeholder='MM' type='text'>
+              <%= select_tag 'MM', options_for_select((1..12)), :prompt => "MM", :id => "month" %>
+
             </li>
             <li>
-              <input placeholder='YYYY' type='text' class="year">
+              <%= select_tag 'YYYY', options_for_select((1940..2014)), :prompt => "YYYY" , :id => "year",:class => "year"%>
             </li>
             <li class="clear"></li>
           </ul>
+          <div id="dateErrorMsg"></div>
           <input type="submit" class="btn enter" value="Enter">
         </form>
       </div>
@@ -74,7 +76,7 @@
             </div>
           </div>  
           <div class="registerForm">
-            <%= form_for @user , :remote => true do |f| %>
+            <%= form_for @user, :method => :post, :remote => true do |f| %>
               <% if @user.errors.full_messages.any? %>
                   <% @user.errors.full_messages.each do |error_message| %>
                       <%= error_message if @user.errors.full_messages.first == error_message %>
@@ -88,6 +90,7 @@
                 <% sf.options[:index] += 1  %>
               <% end %>
               <%= f.text_area :description,:placeholder=>"Tell us about your idea & your self..." %>
+
               <%= f.submit "Register",:class=>"btn" %>
             <% end %>
           </div>
@@ -164,14 +167,14 @@
       var description = new LiveValidation( 'user_description', {onlyOnSubmit: true } );
       description.add( Validate.Presence,{failureMessage:"Description can not be empty."});
 
-      $("#new_user").on("submit",function(event){
-            event.preventDefault();
-            if ($(".LV_invalid").length > 0) {
-                return false;
-            }
-            else {
-                $.post($(event).attr('action'), $(event).serialize(), null, "script");
-            }
-        });
+//      $("#new_user").on("submit",function(event){
+//            event.preventDefault();
+//            if ($(".LV_invalid").length > 0) {
+//                return false;
+//            }
+//            else {
+//                $.post($(event).attr('action'), $(event).serialize(), null, "script");
+//            }
+//        });
   });
 </script>

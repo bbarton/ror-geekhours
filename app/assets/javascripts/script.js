@@ -32,18 +32,27 @@ function setFullWidthHeight(){
 
 function openLandingPage() {
     $('.enter').click(function(){
-        $('.johnyCoder').animate({
-        /*    opacity:0,
-            'z-index':0,
-        },500);*/
-            top:'-50%'
-        },500,'easeInBack',function(){
-            $('.landingPage').animate({
-                opacity:1,
-                'z-index':1,
-            },1000);
-        });
-        return false;
+        if($("#day").val() == '' || $("#month").val() == '' || $("#year").val() == ''){
+            $('#dateErrorMsg').show();
+            $('#dateErrorMsg').html("<span>Please Enter a Date of Birth</span>");
+            return false;
+        }
+        else{
+            $('.johnyCoder').animate({
+                /*    opacity:0,
+                 'z-index':0,
+                 },500);*/
+                top:'-50%'
+            },500,'easeInBack',function(){
+                $('.landingPage').animate({
+                    opacity:1,
+                    'z-index':1,
+                },1000);
+            });
+            return false;
+
+        }
+
     })
 }
 function openRegister(){

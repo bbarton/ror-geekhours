@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     @user = User.new
     3.times{ @user.secondary_users.build }
