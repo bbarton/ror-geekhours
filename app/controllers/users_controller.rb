@@ -17,12 +17,12 @@ class UsersController < ApplicationController
         @user = User.new(params[:user])
         if @user.save
           User.last.update_attributes(:name => User.last.name.capitalize)
-          UserMailer.delay.welcome_email(@user)
-          if @user.secondary_users.present?
-            @user.secondary_users.each do |sec_user|
-              UserMailer.delay.welcome_secondary_email(sec_user,@user.name)
-            end
-          end
+          UserMailer.delay.welcome_email(User.last)
+          #if @user.secondary_users.present?
+          #  @user.secondary_users.each do |sec_user|
+          #    UserMailer.delay.welcome_secondary_email(sec_user,@user.name)
+          #  end
+          #end
           flash[:notice] = nil
           format.html { redirect_to registered_user_users_path}
           format.js
