@@ -8,6 +8,10 @@
           JohnNie CODER
         </span>
       </div>
+
+      <% if flash[:notice].present? %>
+          <h5 class="flash"> <%=  flash[:notice] %></h5>
+      <% end %>
       <div class='enterTheWorld'>
         <h3>
           Enter the world of Johnnie Coder
@@ -70,9 +74,6 @@
             <div class="clear"></div>
 
             <div class="flashnotice">
-              <% if flash[:notice].present? %>
-                  <h5> <%=  flash[:notice] %></h5>
-              <% end %>
             </div>
           </div>  
           <div class="registerForm">
