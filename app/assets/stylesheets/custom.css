@@ -109,6 +109,9 @@ body a {
   opacity: 0;
   z-index: 0;
 }
+.landingPage.show {
+  opacity: 1;
+}
 /* line 80, ../sass/custom.sass */
 .geekImage .johnyCoder {
   width: 620px;
@@ -481,5 +484,11 @@ sup {
 
 #dateErrorMsg span, .LV_validation_message{
   color: #ff4422;
+}
+h5.flash {
+  color: #ff4422;
+margin-top: 15px;
+margin-bottom: -35px;
+  text-align: center;
 }
 
