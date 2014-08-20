@@ -20,13 +20,13 @@ Geekhours::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost://3000' }
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => 'mail.weboniselab.com',
-      :user_name            => 'pansingh@weboniselab.com',
-      :password             => 'pansingh6186',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
+      :enable_starttls_auto => true,
+      :address            => "smtp.gmail.com",
+      :port               => "587",
+      :domain             => "gmail.com",
+      :authentication     => :plain,
+      :user_name          => "pansingh@weboniselab.com",
+      :password           => "pansingh6186"
   }
   config.action_mailer.asset_host = 'http://localhost:3000'
   UserMailer.smtp_settings = Settings.user_mailer

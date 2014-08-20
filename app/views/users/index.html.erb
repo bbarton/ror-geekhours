@@ -84,10 +84,10 @@
               <% end %>
               <%= f.text_field :name, :placeholder=>"Name" %>
               <%= f.text_field :email, :placeholder=>"Email"  %>
-
-              <%= f.fields_for :secondary_users, {:index => 1} do |sf| %>
-                <%= sf.text_field :name, :placeholder=>"Member #{sf.options[:index]}" %>
-                <% sf.options[:index] += 1  %>
+              <% index = 1%>
+              <%= f.fields_for :secondary_users do |sf| %>
+                <%= sf.text_field :name, :placeholder=>"Member #{index}" %>
+                <% index += 1  %>
               <% end %>
               <%= f.text_area :description,:placeholder=>"Tell us about your idea & your self..." %>
 
