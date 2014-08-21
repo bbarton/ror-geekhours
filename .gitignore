@@ -23,5 +23,4 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 public/HRDB.csv
 config/initializers/devise.rb
-Gemfile.lock
 
