@@ -15,7 +15,7 @@ Geekhours::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -57,12 +57,25 @@ Geekhours::Application.configure do
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'contest@webonise.com.com' }
+
+ # config.action_mailer.default_url_options = { :host => 'contest@webonise.com.com' }
+  config.action_mailer.default_url_options = { :host => "geekhours.webonise.com" }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.asset_host = 'http://geekhours.webonise.com'
-  UserMailer.smtp_settings = Settings.user_mailer
+  ActionMailer::Base.smtp_settings = {
+      :enable_starttls_auto => true,
+      :address            => "smtp.gmail.com",
+      :port               => 587,
+      :domain             => 'gmail.com',
+      :authentication     => 'plain',
+      :user_name          => 'pansingh@weboniselab.com',
+      :password           => 'pansingh6186'
+  }
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.asset_host = "http://geekhours.webonise.com"
+
+  #UserMailer.smtp_settings = Settings.user_mailer
   config.i18n.fallbacks = true
 
   # Send deprecation notices to registered listeners
