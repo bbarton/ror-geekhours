@@ -486,10 +486,11 @@ sup {
 #dateErrorMsg span, .LV_validation_message{
   color: #ff4422;
 }
-h5.flash {
-  color: #ff4422;
-margin-top: 15px;
-margin-bottom: -35px;
-  text-align: center;
+.errorMsg {
+    font-size: 18px;
+    color: #ff4422;
+    margin-top: 15px;
+    margin-bottom: -35px;
+    text-align: left;
 }
 

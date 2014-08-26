@@ -23,4 +23,7 @@ config/settings/*.local.yml
 config/environments/*.local.yml
 public/HRDB.csv
 config/initializers/devise.rb
+config/environments/production.rb
+config/environments/development.rb
+
 

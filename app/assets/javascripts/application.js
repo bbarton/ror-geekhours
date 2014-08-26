@@ -22,7 +22,6 @@
 // require jquery.placeholder.min
 // require button
 // require loader
-// require jquery-1.10.2.min
 // require jquery.cycle2
 // require jquery.cycle2.carousel
 // require jquery.cycle2.tile
