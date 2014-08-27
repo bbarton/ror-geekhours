@@ -21,10 +21,10 @@
         <form class="dobForm" id="dateForm">
           <ul>
             <li>
-              <%= select_tag 'DD', options_for_select((1..31)), :prompt => "DD", :id => "day"%>
+              <%= select_tag 'DD', options_for_select((01..31)), :prompt => "DD", :id => "day"%>
             </li>
             <li>
-              <%= select_tag 'MM', options_for_select((1..12)), :prompt => "MM", :id => "month" %>
+              <%= select_tag 'MM', options_for_select((01..12)), :prompt => "MM", :id => "month" %>
 
             </li>
             <li>
@@ -49,7 +49,7 @@
             Developers &amp; Designers gather for a day to build something useful &amp; opensource. Trust us to keep your tummies full & your energies high!          </p>
           <div class="buttons">
             <a href="javascript:void(0)" class="btn register">Register</a>
-            <a href="javascript:void(0)" class="btn tBtn gallery">Geek hours 2013 Gallery</a>
+            <a href="javascript:void(0)" class="btn tBtn gallery">Geek Hours 2013 Gallery</a>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
               <%= f.text_field :email, :placeholder=>"Email"  %>
               <% index = 1%>
               <%= f.fields_for :secondary_users do |sf| %>
-                <%= sf.text_field :name, :placeholder=>"Member #{index}" %>
+                <%= sf.text_field :name, :placeholder=>"Name of Member #{index}" %>
                 <% index += 1  %>
               <% end %>
               <%= f.text_area :description,:placeholder=>"Tell us about your idea & your self..." %>
@@ -108,7 +108,7 @@
                 data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
                 data-cycle-fx="fadeIn"
                 >
-                <div><iframe width="560" height="350" src="//www.youtube.com/embed/DxWZ0A0zCnQ" frameborder="0" allowfullscreen></iframe></div>
+                <div><iframe width="537" height="350" src="//www.youtube.com/embed/DxWZ0A0zCnQ" frameborder="0" allowfullscreen></iframe></div>
                 <div><img src="assets/img2.jpg"></div>
                 <div><img src="assets/img3.jpg"></div>
                 <div><img src="assets/img4.jpg"></div>

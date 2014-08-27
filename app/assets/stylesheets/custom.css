@@ -239,6 +239,9 @@ input.btn, a.btn {
   cursor: pointer;
   text-align: center;
 }
+input.btn:hover, a.btn:hover {
+    color: #fff;
+}
 .eventWrapper {
   margin-bottom: 280px;
 }
@@ -292,7 +295,7 @@ sup {
   opacity: 0.5;
   color: #fff;
   margin-bottom: 35px;
-  font-family: 'robotoregular';
+  font-family: 'robotolight';
 }
 .info .btn {
   float: left;
@@ -396,7 +399,7 @@ sup {
   border: none;
   border-bottom: 1px solid rgba(102,102,102,.2);
   margin-bottom: 16px;
-  color: #b2b2b2;
+  color: #222;
 }
 .registerWrapper textarea {
   background: url("textareaBg.jpg");
