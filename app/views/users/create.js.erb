@@ -1,9 +1,9 @@
 <% if flash[:notice].present? %>
 $(".flashnotice").replaceWith('<div class="flashnotice errorMsg"><h5><%= escape_javascript(flash[:notice]) %></h5></div>');
-$(".flashnotice").show(300);
+$(".flashnotice").show(10);
 <% else %>
 <% if !@user.errors.empty? %>
-$(".flashnotice").replaceWith('<div class="flashnotice errorMsg"><h5>Email Already exists!</h5></div>');
+$(".flashnotice").replaceWith('<div class="flashnotice"><h5>Email Already exists!</h5></div>');
 <% else %>
 $('#registerForm').html("<%= escape_javascript(render :partial => 'thank_you') %>");
 <% end %>

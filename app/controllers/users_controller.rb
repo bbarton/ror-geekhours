@@ -16,11 +16,12 @@ class UsersController < ApplicationController
       else
          @user = User.new(params[:user])
          if @user.save
+           logger.info "Inside a first else"
            User.last.update_attributes(:name => User.last.name.capitalize)
            UserMailer.delay.welcome_email(User.last)
            flash[:notice] = nil
-           format.html { redirect_to registered_user_users_path}
-           format.js
+            format.html { redirect_to registered_user_users_path}
+            format.js { render :js => "window.location = 'users/registered_user'" }
          else
            flash[:notice] = "Email Already Exists"
            format.html {  redirect_to root_path }
