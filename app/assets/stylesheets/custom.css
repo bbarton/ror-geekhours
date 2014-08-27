@@ -240,7 +240,7 @@ input.btn, a.btn {
   text-align: center;
 }
 input.btn:hover, a.btn:hover {
-    color: #fff;
+    background: #61ae00;
 }
 .eventWrapper {
   margin-bottom: 280px;
@@ -400,6 +400,10 @@ sup {
   border-bottom: 1px solid rgba(102,102,102,.2);
   margin-bottom: 16px;
   color: #222;
+  padding-left: 8px;
+}
+.registerWrapper input[type="text"]:focus,.registerWrapper textarea:focus {
+    outline: none;
 }
 .registerWrapper textarea {
   background: url("textareaBg.jpg");

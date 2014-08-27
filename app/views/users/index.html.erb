@@ -21,10 +21,10 @@
         <form class="dobForm" id="dateForm">
           <ul>
             <li>
-              <%= select_tag 'DD', options_for_select((01..31)), :prompt => "DD", :id => "day"%>
+              <%= select_tag 'DD', options_for_select([ "01", "02", "03","04","05","06","07","08","09", "10","11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" ]), :prompt => "DD", :id => "day"%>
             </li>
             <li>
-              <%= select_tag 'MM', options_for_select((01..12)), :prompt => "MM", :id => "month" %>
+              <%= select_tag 'MM', options_for_select([ "01", "02", "03","04","05","06","07","08","09", "10","11", "12"]), :prompt => "MM", :id => "month" %>
 
             </li>
             <li>
