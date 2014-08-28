@@ -28,7 +28,7 @@
 
             </li>
             <li>
-              <%= select_tag 'Year', options_for_select((2014..1940)), :prompt => "Year" , :id => "year",:class => "year"%>
+              <%= select_tag 'Year', options_for_select(2014.downto(1940)), :prompt => "Year" , :id => "year",:class => "year"%>
             </li>
             <li class="clear"></li>
           </ul>
