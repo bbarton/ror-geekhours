@@ -237,6 +237,7 @@ input.btn, a.btn {
   border: 0;
   font-family: 'robotobold';
   cursor: pointer;
+
   text-align: center;
 }
 input.btn:hover, a.btn:hover {
@@ -295,7 +296,7 @@ sup {
   opacity: 0.5;
   color: #fff;
   margin-bottom: 35px;
-  font-family: 'robotolight';
+  font-family: 'robotoregular';
 }
 .info .btn {
   float: left;
@@ -501,3 +502,6 @@ sup {
     text-align: left;
 }
 
+.hidden {
+    display: none;
+}
