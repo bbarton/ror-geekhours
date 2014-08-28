@@ -145,6 +145,8 @@ geekBgImage.png: geekBgImage-dacde17513fc4eedfe8599135e4609d4.png
 geekBgImage/index.png: geekBgImage-dacde17513fc4eedfe8599135e4609d4.png
 geekLogo.png: geekLogo-f446ac4fb86d4b199eaf3c6a8c30bafd.png
 geekLogo/index.png: geekLogo-f446ac4fb86d4b199eaf3c6a8c30bafd.png
+geekhours_socialThumbnail_v1.png: geekhours_socialThumbnail_v1-efc3012b58bcf404008254cfd904e66c.png
+geekhours_socialThumbnail_v1/index.png: geekhours_socialThumbnail_v1-efc3012b58bcf404008254cfd904e66c.png
 geekhours_socialThumbnail_v2.png: geekhours_socialThumbnail_v2-d56b35e1b536e30cf180138937b90206.png
 geekhours_socialThumbnail_v2/index.png: geekhours_socialThumbnail_v2-d56b35e1b536e30cf180138937b90206.png
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
@@ -215,8 +217,8 @@ application.js: application-1b13569e9620782f423d4cd3ce931750.js
 application/index.js: application-1b13569e9620782f423d4cd3ce931750.js
 admin.css: admin-2ca3ad2d7016dde39c0bcf3791a200af.css
 admin/index.css: admin-2ca3ad2d7016dde39c0bcf3791a200af.css
-application.css: application-acacafd7cce2493864ca35b6b0afe94d.css
-application/index.css: application-acacafd7cce2493864ca35b6b0afe94d.css
+application.css: application-4b0c1c9634c849b8806584039dd6d93e.css
+application/index.css: application-4b0c1c9634c849b8806584039dd6d93e.css
 jquery.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
 jquery/index.min.map: jquery.min-388372ef65cc311f6a3df4a6ceac8d22.map
 fontawesome-webfont.eot: fontawesome-webfont-009f6d1f667cc42c25e712ab3429cbc7.eot
