@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :team_name,:description,:secondary_users_attributes
   #validate :email, :uniqueness => true
   validates :email,:presence => {:message => "Your email is used to save your greeting."}, :allow_blank => true,:uniqueness => { :case_sensitive => false }
-
 end
