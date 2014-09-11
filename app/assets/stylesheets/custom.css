@@ -237,7 +237,11 @@ input.btn, a.btn {
   border: 0;
   font-family: 'robotobold';
   cursor: pointer;
+
   text-align: center;
+}
+input.btn:hover, a.btn:hover {
+    background: #61ae00;
 }
 .eventWrapper {
   margin-bottom: 280px;
@@ -396,7 +400,11 @@ sup {
   border: none;
   border-bottom: 1px solid rgba(102,102,102,.2);
   margin-bottom: 16px;
-  color: #b2b2b2;
+  color: #222;
+  padding-left: 8px;
+}
+.registerWrapper input[type="text"]:focus,.registerWrapper textarea:focus {
+    outline: none;
 }
 .registerWrapper textarea {
   background: url("textareaBg.jpg");
@@ -494,3 +502,6 @@ sup {
     text-align: left;
 }
 
+.hidden {
+    display: none;
+}
