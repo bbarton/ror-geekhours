@@ -2,6 +2,6 @@ class AdminMailer < ActionMailer::Base
   default from: "vivek@webonise.com"
 
   def send_invite (email)
-    mail(:to =>email,:from=>"vivek@webonise.com",:content_type=> 'text/html')
+    mail(:to =>email, subject: "Webonise Lab : Geek Hours 2014!")
   end
 end
