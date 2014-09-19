@@ -1,0 +1,55 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Geek Welcome Emailer</title>
+  <style type="text/css">
+      body {
+          font-family: arial;
+      }
+
+      table {
+          border-collapse: collapse;
+      }
+  </style>
+</head>
+<body style="margin: 0;">
+<table align="center" cellpadding="0" cellspacing="0" width="620" border="0" bgcolor="#6cc900" >
+  <tr>
+    <td align="center" width="290" valign="top" style="padding-top:27px;padding-bottom:40px;">
+      <img vspace="0" hspace="0" border="0" alt="Geek Hours" title="Geek Hours" src="http://emailers.weboapps.com/geek-welcome-emailer/images/bottle-img.jpg">
+    </td>
+    <td align="left" width="330" valign="top" style="padding-top:15px;padding-bottom:44px; padding-right: 15px;">
+      <table cellpadding="0" cellspacing="0" border="0" align="left">
+        <tr>
+          <td valign="top" align="right" colspan="2" height="232"><img vspace="0" hspace="0" border="0" alt="Geek Hours" title="Geek Hours" src="http://emailers.weboapps.com/geek-welcome-emailer/images/logo.jpg"></td>
+        </tr>
+        <tr>
+          <td valign="top" align="left" colspan="2" height="104" style="border-bottom-color: #5fb100; border-bottom-width: 1px; border-bottom-style: solid; color: #000000; font-size: 16px; padding-bottom: 20px;line-height: 26px;">
+            Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Donec mollis quis vel feugiat. Curabitur et neque. Praesent fringilla urna justo, facilisis velit aliquet id. Ut vestibulum
+            vestibulum.
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="left" colspan="2" height="40" style="color: #000000; font-size: 18px; padding-top: 40px;">Your Team Members</td>
+        </tr>
+        <tr>
+          <td valign="top" align="left" height="50" width="30"><img vspace="0" hspace="0" border="0" alt="Geek Hours" title="Geek Hours" src="http://emailers.weboapps.com/geek-welcome-emailer/images/glass-icon.jpg"></td>
+          <td valign="top" align="left" style="color: #FFFFFF; font-size: 22px;"><%= @user.name %></td>
+        </tr>
+        <% @secondary_users.each do |secondary_user|%>
+            <tr>
+              <td valign="top" align="left" height="50" width="30"><img vspace="0" hspace="0" border="0" alt="Geek Hours" title="Geek Hours" src="http://emailers.weboapps.com/geek-welcome-emailer/images/glass-icon.jpg"></td>
+              <td valign="top" align="left" style="color: #FFFFFF; font-size: 22px;"><%= secondary_user.name %></td>
+            </tr>
+        <% end%>
+        <tr>
+          <td valign="top" align="left" colspan="2" height="40" style="color: #daf0cb; font-size: 12px; padding-top: 110px;">Copyright &copy; 2014 Geekhours</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
