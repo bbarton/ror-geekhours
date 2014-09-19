@@ -8,5 +8,6 @@ class AdminMailer < ActionMailer::Base
   def send_hall_ticket(user, secondary_users)
     @user = user
     @secondary_users = secondary_users
+    mail(:to => user.email, subject: "Johnnie Coder: Hall Ticket of Geek Hours 2014!")
   end
 end
