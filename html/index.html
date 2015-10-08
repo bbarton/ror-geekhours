@@ -17,7 +17,7 @@
         </style> -->
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
 
         <!--[if lt IE 9]>
@@ -54,16 +54,114 @@
                 <div class="desc">Geek hours is a Hackathon event organised by Webonise Lab.Developers/ Designers from all over Pune gather for a day to build something useful &amp; opensource.</div>
               </div>
               <div class="buttons">
-                <a href="#" class="registerBtn">Register</a>
-                <a href="#" class="galleryBtn">Geek Hours Gallery</a>
+                <a href="#" class="registerBtn linkButton" data-target=".registerWrap">Register</a>
+                <a href="#" class="galleryBtn linkButton" data-target=".galleryWrap">Geek Hours Gallery</a>
               </div>
             </div>
             <div class="copy">
               <a href="http://webonise.com" target="_blank" class="weboLogo"></a>
               <div class="text">Geekhours &copy; 2015</div>
             </div>
+
             <div class="registerWrap">
-              <a href="#" class="close">Close</a>
+              <a href="#" class="close icon-close"></a>
+                <div class="dispTable">
+                    <div class="dispTableCell">
+                        <div class="regFormWrap">
+                            <h3 class="sideBarHeading text-center"><span>Register for</span> <i class="icon-geekhour"></i> <span>@ Webonise</span></h3>
+                            <form action="#">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Name" name="userName" class="form-control customInput" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email" name="userEmail" class="form-control customInput" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Member1" name="member1" class="form-control customInput" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Member2" name="member2" class="form-control customInput" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Member3" name="member3" class="form-control customInput" />
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control customInput" placeholder="Tell us about your idea & your self..."></textarea>
+                                </div>
+                                <div class="form-group btnSubmitWrap">
+                                    <button type="submit" class="btnSubmit">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="galleryWrap">
+                <a href="#" class="close icon-close"></a>
+                <div class="dispTable">
+                    <div class="dispTableCell">
+                        <div class="galleryListWrap">
+                            <h3 class="sideBarHeading"><span>Take a peek @Geek Hours Sep-2014</span></h3>
+                            <div class="galleryInner">
+                                <div id="slideshow-1">
+                                    <div id="cycle-1" class="cycle-slideshow"
+                                         data-cycle-slides="> div"
+                                         data-cycle-timeout="0"
+                                         data-cycle-prev=".cycle-prev"
+                                         data-cycle-next=".cycle-next"
+                                         data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
+                                         data-cycle-fx="fadeIn"
+                                            >
+                                        <div><iframe width="537" height="350" src="//www.youtube.com/embed/DxWZ0A0zCnQ" frameborder="0" allowfullscreen></iframe></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img2.jpg"></div>
+
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img3.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img4.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img5.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img6.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img7.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img8.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img9.jpg"></div>
+                                        <div><img src="http://geekhours.weboniselab.com/assets/img10.jpg"></div>
+                                    </div>
+                                </div>
+
+                                <div id="slideshow-2">
+                                    <div id="cycle-2" class="cycle-slideshow"
+                                         data-cycle-slides="> div"
+                                         data-cycle-timeout="0"
+                                         data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
+                                         data-cycle-fx="carousel"
+                                         data-cycle-carousel-visible="5"
+                                         data-cycle-carousel-fluid=true
+                                         data-allow-wrap="false"
+                                            >
+                                        <div class="innerSlide">
+                                            <img src="https://i.ytimg.com/vi/DxWZ0A0zCnQ/sddefault.jpg">
+                                            <i class="icon-play-small"></i>
+                                        </div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img2.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img3.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img4.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img5.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img6.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img7.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img8.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img9.jpg"></div>
+                                        <div class="innerSlide"><img src="http://geekhours.weboniselab.com/assets/img10.jpg"></div>
+                                    </div>
+                                    <p>
+                                        <a href="javascript:void(0)" class="cycleArrow cycle-prev">&laquo; prev</a>
+                                        <a href="javascript:void(0)" class="cycleArrow cycle-next">next &raquo;</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
       </div>
@@ -73,6 +171,9 @@
 
         <script type="text/javascript" src="js/vendor/jquery.pagepiling.min.js"></script>
         <script src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.cycle2.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.cycle2.carousel.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery.cycle2.tile.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

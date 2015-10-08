@@ -32,29 +32,36 @@
 	    	var windowWidth = $(window).width();
 	    	var wrapperWidht = windowWidth-385;
 	    	var registerWrap = $('.registerWrap');
+            var galleryWrap = $(".galleryWrap");
 	    	registerWrap.css({
 	    		width: wrapperWidht,
 	    		right: -wrapperWidht
 	    	});
+            galleryWrap.css({
+                width: wrapperWidht,
+                right: -wrapperWidht
+            });
+
 
 			var gh = $( ".ghLogo" );
 			var ghl;
 			//var ght;
-	    	$('.registerBtn').click(function(e) {
+	    	$('.linkButton').click(function(e) {
 				e.stopPropagation();
 				e.preventDefault();
+                var whichWrap = $(this).data("target");
 				var offset = gh.offset();
 				ghl = offset.left;
 				//ght = offset.top;
 
-				console.log(ghl);
 				gh.css({
 					position: 'relative'
 				})
 	    		/* Act on the event */
-		    	registerWrap.animate({
+                $(whichWrap).animate({
 		    		right: 0
 		    	},1000);
+                $(whichWrap).addClass("activeSide");
 		    	gh.animate({
 		    		left: -(ghl - 115)},
 		    		1000);
@@ -72,13 +79,16 @@
 		    	);
 		    	$('.inner, .buttons').fadeOut(500);
 	    	});
-	    	$('.registerWrap a.close').click(function(e) {
+
+          	$('a.close').click(function(e) {
+                var whichWrap = $(this).parents(".activeSide");
 				e.stopPropagation();
 				e.preventDefault();
 	    		/* Act on the event */
-		    	registerWrap.animate({
+		    	$(whichWrap).animate({
 		    		right: -wrapperWidht
 		    	},1000);
+                $(whichWrap).removeClass("activeSide");
 		    	gh.animate({
 		    		left: 0},
 		    		1000);
@@ -110,4 +120,15 @@
 			$('html').click(function(){
 				$('#examplesList').hide();
 			});*/
-	    });
+
+
+            var slideshows = $('.cycle-slideshow').on('cycle-next cycle-prev', function(e, opts) {
+                // advance the other slideshow
+                slideshows.not(this).cycle('goto', opts.currSlide);
+            });
+
+            $('#cycle-2 .cycle-slide').click(function(){
+                var index = $('#cycle-2').data('cycle.API').getSlideIndex(this);
+                slideshows.cycle('goto', index);
+            });
+        });
