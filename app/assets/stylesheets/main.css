@@ -595,6 +595,75 @@ a.at4-share-btn {
 
 }
 
+@media (max-width:359px){
+  .inner, .buttons {
+    margin: 0 0 10px;
+    width: auto;
+}
+  .section5 h2.centerHeading {
+      font-size: 20px;
+      line-height: 34px;
+  }
+  .codersLogo {
+      height: 32px;
+      width: 87px;
+      background-size: 87px 32px;
+      margin: 10px auto;
+  }
+.ghLogo {
+    height: 62px;
+    width: 62px;
+    background: url(ghLogo.png) no-repeat;
+    background-size: 62px 62px;
+    margin: 0 auto 10px;
+}
+a.registerBtn, .btnSubmit {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+a.galleryBtn {
+    font-size: 12px;
+}
+a.registerBtn, a.galleryBtn, .btnSubmit {
+    line-height: 35px;
+    height: 35px;
+}
+.buttons {
+    margin: 0 0 20px;
+}
+.sideBarHeading {
+    font-size: 16px;
+}
+.customInput {
+    font-size: 12px;
+    line-height: 26px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+.LV_validation_message {
+    color: #ff4422;
+    font-size: 10px;
+}
+.regFormWrap h3 {
+    margin: 0 0 5px;
+}
+.icon-geekhour {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    background-position: 0 0;
+    background-size: 50px 110px;
+}
+.regFormWrap h3 span {
+    padding: 11px 0;
+}
+.galleryListWrap .sideBarHeading {
+    font-size: 14px;
+}
+
+
+}
 
 
 
