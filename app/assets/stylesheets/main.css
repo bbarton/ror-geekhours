@@ -5,21 +5,22 @@
    ========================================================================== */
 body {
 	font-family: 'Roboto', sans-serif;
+  background: #000;
 }
 .section1 { 
-  background: url(bg1.jpg) no-repeat center center fixed; 
+  background:#000 url(bg1.jpg) no-repeat center center fixed; 
 }
 .section2 { 
-  background: url(bg2.jpg) no-repeat center center fixed; 
+  background:#000 url(bg2.jpg) no-repeat center center fixed; 
 }
 .section3 { 
-  background: url(bg3.jpg) no-repeat center center fixed; 
+  background:#000 url(bg3.jpg) no-repeat center center fixed; 
 }
 .section4 { 
-  background: url(bg4.jpg) no-repeat center center fixed; 
+  background:#000 url(bg4.jpg) no-repeat center center fixed; 
 }
 .section5 { 
-  background: url(bg5.jpg) no-repeat center center fixed; 
+  background:#000 url(bg5.jpg) no-repeat center center fixed; 
 }
 .section { 
   -webkit-background-size: cover;
@@ -246,6 +247,7 @@ a.weboLogo {
 	right: 0;
 	top: 0;
 	background: #fff;
+  opacity: 0;
 }
 
 .dispTable {
@@ -438,6 +440,12 @@ textarea.customInput {
 #pp-nav {
   display: none !important;
 }
+a.at4-share-btn {
+  background: rgba(255,255,255, 0.09) !important;
+}
+
+
+
 @media (max-width:767px){
   .downArrow {
     /*bottom: 70px;*/
@@ -514,6 +522,10 @@ a.linkButton:last-child {
 .sideBarHeading {
     font-size: 20px;
 }
+.galleryListWrap .sideBarHeading {
+    font-size: 18px;
+    text-align: center;
+}
 .icon-close {
     background-position: 0 -147px;
     width: 22px;
@@ -539,6 +551,22 @@ a.linkButton:last-child {
     background: url("prev-arrow.png") no-repeat center;
     left: -22px;
 }
+textarea.customInput {
+    height: 90px;
+}
+.customInput {
+    font-size: 16px;
+    line-height: 30px;
+}
+.btnSubmitWrap {
+    margin: 15px 0 0 0;
+}
+.form-control {
+    height: 30px;
+  }
+
+
+
 
 }
 

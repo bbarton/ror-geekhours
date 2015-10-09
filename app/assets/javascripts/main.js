@@ -38,11 +38,13 @@
             var galleryWrap = $(".galleryWrap");
 	    	registerWrap.css({
 	    		width: wrapperWidht,
-	    		right: -wrapperWidht
+	    		right: -wrapperWidht,
+	    		opacity:1
 	    	});
             galleryWrap.css({
                 width: wrapperWidht,
-                right: -wrapperWidht
+                right: -wrapperWidht,
+	    		opacity:1
             });
             if(windowWidth <= 768){
 		    	registerWrap.css({
@@ -98,7 +100,7 @@
 			    		top:0,
 			    		width:'100%',
 			    		height:'100%'
-			    	},1000);
+			    	},500);
 		    	}
 	    	});
 
@@ -132,11 +134,11 @@
 			    	registerWrap.animate({
 			    		width: '100%',
 			    		right: '-100%'
-			    	},1000);
+			    	},500);
 		            galleryWrap.animate({
 			    		width: '100%',
 			    		right: '-100%'
-		            },1000);
+		            },500);
 		    	}
 	    	});
 
