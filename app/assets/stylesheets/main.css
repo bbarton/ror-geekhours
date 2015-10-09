@@ -392,6 +392,7 @@ textarea.customInput {
 
 #slideshow-2 {
     position: relative;
+    margin-top: 15px;
 }
 #slideshow-2 .innerSlide {
     width: 96px !important;
