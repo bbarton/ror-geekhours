@@ -33,6 +33,25 @@
 		    	$.fn.pagepiling.moveSectionDown();
 			});
 	    	var windowWidth = $(window).width();
+	    	var windowHegiht = $(window).height();
+	    	if(windowWidth<=windowHegiht){
+	    		$('body').addClass('portrait');
+	    		$('body').removeClass('landscape');
+	    	}else{
+	    		$('body').removeClass('portrait');
+	    		$('body').addClass('landscape');
+	    	}
+	    	$(window).resize(function(event) {
+		    	windowWidth = $(window).width();
+		    	windowHegiht = $(window).height();
+		    	if(windowWidth<=windowHegiht){
+		    		$('body').addClass('portrait');
+		    		$('body').removeClass('landscape');
+		    	}else{
+		    		$('body').removeClass('portrait');
+		    		$('body').addClass('landscape');
+		    	}
+	    	});
 	    	var wrapperWidht = windowWidth-385;
 	    	var registerWrap = $('.registerWrap');
             var galleryWrap = $(".galleryWrap");
