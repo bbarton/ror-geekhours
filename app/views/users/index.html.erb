@@ -40,30 +40,7 @@
                 <div class="dispTable">
                     <div class="dispTableCell">
                         <div class="regFormWrap">
-                            <h3 class="sideBarHeading text-center"><span>Register for Geek Hours</span> <!-- <i class="icon-geekhour"></i> <span>@ Webonise</span> --></h3>
-                            <!-- <form action="#">
-                                <div class="form-group">
-                                    <input type="text" placeholder="Name" name="userName" class="form-control customInput" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" placeholder="Email" name="userEmail" class="form-control customInput" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Member1" name="member1" class="form-control customInput" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Member2" name="member2" class="form-control customInput" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Member3" name="member3" class="form-control customInput" />
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control customInput" placeholder="Tell us about your idea & your self..."></textarea>
-                                </div>
-                                <div class="form-group btnSubmitWrap">
-                                    <button type="submit" class="btnSubmit">Register</button>
-                                </div>
-                            </form> -->
+                            <h3 class="sideBarHeading text-center"><span>Register for</span> <i class="icon-geekhour"></i> <span>@ Webonise</span></h3>
                             <%= form_for @user, :method => :post, :remote => true do |f| %>
                               <% if @user.errors.full_messages.any? %>
                                   <% @user.errors.full_messages.each do |error_message| %>
@@ -95,9 +72,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="galleryWrap">
                 <a href="#" class="close icon-close"></a>
                 <div class="dispTable">
@@ -164,16 +138,6 @@
             </div>
           </div>
       </div>
-       <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
-
-        <!-- <script src="js/vendor/bootstrap.min.js"></script> -->
-
-        <!-- <script type="text/javascript" src="js/vendor/jquery.pagepiling.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.cycle2.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.cycle2.carousel.js"></script>
-        <script type="text/javascript" src="js/vendor/jquery.cycle2.tile.js"></script>
-        <script src="js/main.js"></script> -->
 <script>
   $(document).ready(function(){
       var username = new LiveValidation( 'user_name', {onlyOnSubmit: true } );
