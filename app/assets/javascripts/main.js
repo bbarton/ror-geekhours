@@ -112,7 +112,7 @@
 			    		fontSize: 28},
 			    		1000
 			    	);
-			    	$('.inner, .buttons').fadeOut(500);
+			    	//$('.inner, .buttons').fadeOut(500);
 		    	}else{
 		    		$(whichWrap).animate({
 			    		right: 0,
@@ -148,7 +148,7 @@
 			    		fontSize: 48},
 			    		1000
 			    	);
-			    	$('.inner, .buttons').fadeIn(1500);
+			    	//$('.inner, .buttons').fadeIn(1500);
 		    	}else{
 			    	registerWrap.animate({
 			    		width: '100%',
