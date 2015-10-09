@@ -33,6 +33,25 @@
 		    	$.fn.pagepiling.moveSectionDown();
 			});
 	    	var windowWidth = $(window).width();
+	    	var windowHegiht = $(window).height();
+	    	if(windowWidth<=windowHegiht){
+	    		$('body').addClass('portrait');
+	    		$('body').removeClass('landscape');
+	    	}else{
+	    		$('body').removeClass('portrait');
+	    		$('body').addClass('landscape');
+	    	}
+	    	$(window).resize(function(event) {
+		    	windowWidth = $(window).width();
+		    	windowHegiht = $(window).height();
+		    	if(windowWidth<=windowHegiht){
+		    		$('body').addClass('portrait');
+		    		$('body').removeClass('landscape');
+		    	}else{
+		    		$('body').removeClass('portrait');
+		    		$('body').addClass('landscape');
+		    	}
+	    	});
 	    	var wrapperWidht = windowWidth-385;
 	    	var registerWrap = $('.registerWrap');
             var galleryWrap = $(".galleryWrap");
@@ -93,7 +112,7 @@
 			    		fontSize: 28},
 			    		1000
 			    	);
-			    	$('.inner, .buttons').fadeOut(500);
+			    	//$('.inner, .buttons').fadeOut(500);
 		    	}else{
 		    		$(whichWrap).animate({
 			    		right: 0,
@@ -129,7 +148,7 @@
 			    		fontSize: 48},
 			    		1000
 			    	);
-			    	$('.inner, .buttons').fadeIn(1500);
+			    	//$('.inner, .buttons').fadeIn(1500);
 		    	}else{
 			    	registerWrap.animate({
 			    		width: '100%',

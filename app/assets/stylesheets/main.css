@@ -392,6 +392,7 @@ textarea.customInput {
 
 #slideshow-2 {
     position: relative;
+    margin-top: 15px;
 }
 #slideshow-2 .innerSlide {
     width: 96px !important;
@@ -444,7 +445,9 @@ textarea.customInput {
 a.at4-share-btn {
   background: rgba(255,255,255, 0.09) !important;
 }
-
+.lButtons {
+  display: none;
+}
 
 
 @media (max-width:767px){
@@ -463,107 +466,128 @@ a.at4-share-btn {
       line-height: 56px;
       text-align: center;
   }
-.section5 h2.centerHeading {
-    font-size: 28px;
-    line-height: 32px;
-}
-.codersLogo {
-    height: 43px;
-    width: 116px;
-    background-size: 116px 43px;
-    margin: 20px auto;
-}
-.bottomContent {
-    width: auto;
-    margin: 0 20px;
-}
-.ghLogo,.inner,.buttons {
-  float: none;
-}
-.ghLogo {
-    height: 85px;
-    width: 85px;
-    background: url(ghLogo.png) no-repeat;
-    background-size: 85px 85px;
-    margin:0 auto 20px;
-}
-.inner, .buttons {
-    margin: 0 0 20px;
-    width: auto;
-}
-a.linkButton {
-  float: left;
-  width: 46%;
-}
-a.linkButton:first-child {
-  margin-right: 4%;
-}
-a.linkButton:last-child {
-  margin-left: 4%;
-}
-.heading {
+  .section5 h2.centerHeading {
+      font-size: 28px;
+      line-height: 32px;
+  }
+  .codersLogo {
+      height: 43px;
+      width: 116px;
+      background-size: 116px 43px;
+      margin: 20px auto;
+  }
+  .bottomContent {
+      width: auto;
+      margin: 0 20px;
+  }
+  .portrait .ghLogo,.portrait .inner,.portrait .buttons {
+    float: none;
+  }
+  .ghLogo {
+      height: 85px;
+      width: 85px;
+      background: url(ghLogo.png) no-repeat;
+      background-size: 85px 85px;
+      margin:0 auto 20px;
+  }
+  .inner, .buttons {
+      margin: 0 0 20px;
+      width: auto;
+  }
+  .landscape .inner {
+    float: none;
+    margin:0 120px;
+  }
+  .portrait a.linkButton {
+    float: left;
+    width: 46%;
+  }
+  .portrait a.linkButton:first-child {
+    margin-right: 4%;
+  }
+  .portrait a.linkButton:last-child {
+    margin-left: 4%;
+  }
+  .landscape .buttons {
+    display: none;
+  }
+  .landscape .buttons.lButtons {
+    display: block;
+    float: right;
+    width: 100px;
+  }
+  .landscape a.registerBtn {
     font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 6px;
-}
-.desc {
-    font-size: 12px;
-    line-height: 18px;
-}
-.copy {
-    bottom: 0px;
-}
-.regFormWrap {
-    width: auto;
-    margin: 20px;
-}
-.regFormWrap h3 {
-    margin:10px 0;
-}
-.sideBarHeading {
-    font-size: 20px;
-}
-.galleryListWrap .sideBarHeading {
-    font-size: 18px;
-    text-align: center;
-}
-.icon-close {
-    background-position: 0 -147px;
-    width: 22px;
-    height: 22px;
-    display: inline-block;
-    opacity: 1;
-    position: absolute;
-    top:5px;
-    right: 5px;
-}
-.form-group {
-    margin-bottom: 10px;
-}
-.galleryListWrap {
-    width: auto;
-     margin: 20px 30px; 
-}
-#slideshow-2 .cycle-next {
-    background: url("next-arrow.png") no-repeat center;
-    right: -22px;
-}
-#slideshow-2 .cycle-prev {
-    background: url("prev-arrow.png") no-repeat center;
-    left: -22px;
-}
-textarea.customInput {
-    height: 90px;
-}
-.customInput {
-    font-size: 16px;
-    line-height: 30px;
-}
-.btnSubmitWrap {
-    margin: 15px 0 0 0;
-}
-.form-control {
-    height: 30px;
+  }
+  .landscape a.galleryBtn {
+      font-size: 10px;
+  }
+  .landscape .codersLogo {
+    margin: 10px auto;
+  }
+  .heading {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 6px;
+  }
+  .desc {
+      font-size: 12px;
+      line-height: 18px;
+  }
+  .copy {
+      bottom: 0px;
+  }
+  .regFormWrap {
+      width: auto;
+      margin: 20px;
+  }
+  .regFormWrap h3 {
+      margin:10px 0;
+  }
+  .sideBarHeading {
+      font-size: 20px;
+  }
+  .galleryListWrap .sideBarHeading {
+      font-size: 18px;
+      text-align: center;
+  }
+  .icon-close {
+      background-position: 0 -147px;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      opacity: 1;
+      position: absolute;
+      top:5px;
+      right: 5px;
+  }
+  .form-group {
+      margin-bottom: 10px;
+  }
+  .galleryListWrap {
+      width: auto;
+       margin: 20px 30px; 
+  }
+  #slideshow-2 .cycle-next {
+      background: url("next-arrow.png") no-repeat center;
+      right: -22px;
+  }
+  #slideshow-2 .cycle-prev {
+      background: url("prev-arrow.png") no-repeat center;
+      left: -22px;
+  }
+  textarea.customInput {
+      height: 90px;
+  }
+  .customInput {
+      font-size: 16px;
+      line-height: 30px;
+  }
+  .btnSubmitWrap {
+      margin: 15px 0 0 0;
+  }
+  .form-control {
+      height: 30px;
   }
 
 
