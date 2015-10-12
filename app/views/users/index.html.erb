@@ -1,4 +1,7 @@
 <a href="" class="downArrow active"></a>
+<div class="loader">
+  <div class="loaderInner"></div>
+</div>
 <div id="pagepiling">
           <div class="section section1">
             <h2 class="rightHeading">Many villagers don’t have <br>basic necessities</h2>
@@ -22,16 +25,16 @@
             <div class="bottomContent">
               <div class="ghLogo"></div>
               <div class="buttons lButtons clearfix">
-                <a href="#" class="registerBtn linkButton" data-target=".registerWrap">Register</a>
-                <a href="#" class="galleryBtn linkButton" data-target=".galleryWrap">Geek Hours Gallery</a>
+                <a href="#" class="registerBtn linkButton first" data-target=".registerWrap">Register</a>
+                <a href="#" class="galleryBtn linkButton last" data-target=".galleryWrap">Geek Hours Gallery</a>
               </div>
               <div class="inner"> 
                 <div class="heading">17<sup>th</sup> OCT 2015, Pune, India @ webonise</div>
                 <div class="desc">Geek hours is a Hackathon event organised by Webonise. Developers/ Designers from all over Pune gather for a day to build something useful &amp; opensource.</div>
               </div>
               <div class="buttons clearfix">
-                <a href="#" class="registerBtn linkButton" data-target=".registerWrap">Register</a>
-                <a href="#" class="galleryBtn linkButton" data-target=".galleryWrap">Geek Hours Gallery</a>
+                <a href="#" class="registerBtn linkButton first" data-target=".registerWrap">Register</a>
+                <a href="#" class="galleryBtn linkButton last" data-target=".galleryWrap">Geek Hours Gallery</a>
               </div>
             </div>
             <div class="copy">
@@ -91,10 +94,11 @@
                                          data-cycle-next=".cycle-next"
                                          data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
                                          data-cycle-fx="fadeIn"
+                                         data-cycle-auto-height=container
                                             >
 
                                         <div><img src="/assets/slide-3.jpg"></div>
-                                        <div><iframe width="537" src="//www.youtube.com/embed/DxWZ0A0zCnQ" frameborder="0" allowfullscreen></iframe></div>
+                                        <div class="videoWrapper"><iframe width="537" src="//www.youtube.com/embed/DxWZ0A0zCnQ" frameborder="0" allowfullscreen id="playerID"></iframe></div>
                                         <div><img src="/assets/slide-2.jpg"></div>
                                         <div><img src="/assets/slide-1.jpg"></div>
                                         <div><img src="/assets/slide-4.jpg"></div>
@@ -114,7 +118,9 @@
                                          data-cycle-timeout="0"
                                          data-cycle-caption-template="Slide {{slideNum}} of {{slideCount}}"
                                          data-cycle-fx="carousel"
+                                         data-cycle-carousel-visible="5"
                                          data-cycle-carousel-fluid=true
+                                         data-allow-wrap="false"
                                             >
                                         <div class="innerSlide"><img src="/assets/slide-3.jpg"></div>
                                         <div class="innerSlide">
