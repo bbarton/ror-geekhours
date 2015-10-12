@@ -8,7 +8,7 @@ $(document).ready(function() {
 		anchors: ['ManyVillagersDontHaveBasicNecessities', 
 				  'ThousandsOfPeopleBecomeVictimsOfNaturalDisasters', 
 				  'HundredsOfFarmersAreStillCommittingSuicides', 
-				  'ItsTimeToAssemble!', 
+				  'ItsTimeToAssemble', 
 				  'Register'],
 	    //sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
 	    navigation: {
