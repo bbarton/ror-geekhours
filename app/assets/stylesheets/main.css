@@ -449,20 +449,20 @@ a.at4-share-btn {
   display: none;
 }
 .addthis_32x32_style .at4-share-btn .at4-icon {
-    background: url("../images/social-sprite.png");
+    background: url("social-sprite.png");
     background-repeat: no-repeat;
     background-size: 32px auto !important;
 }
-.at4-icon.aticon-facebook {
+.addthis_32x32_style .at4-share-btn .at4-icon.aticon-facebook {
     background-position: 0 0;
 }
-.at4-icon.aticon-twitter{
+.addthis_32x32_style .at4-share-btn .at4-icon.aticon-twitter{
     background-position: 0 -32px;
 }
-.at4-icon.aticon-google_plusone_share{
+.addthis_32x32_style .at4-share-btn .at4-icon.aticon-google_plusone_share{
     background-position: 0 -96px;
 }
-.at4-icon.aticon-linkedin{
+.addthis_32x32_style .at4-share-btn .at4-icon.aticon-linkedin{
     background-position: 0 -128px;
 }
 
