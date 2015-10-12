@@ -196,10 +196,10 @@ $(document).ready(function() {
         slideshows.cycle('goto', index);
     });
 });
-/*$(window).load(function() {
+$(window).load(function() {
 	$('#pagepiling').animate({
 		opacity: 1},
 		1000
 	);
 	$('.loader').fadeOut(100);
-});*/
+});
