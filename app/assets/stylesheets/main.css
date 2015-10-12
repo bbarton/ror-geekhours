@@ -358,12 +358,15 @@ textarea:-ms-input-placeholder{ /* Internet Explorer 10-11 */
     outline: none;
 }
 textarea.customInput {
-    background: url("textareaBg.jpg");
     height: 126px;
-    line-height: 42px;
-    border-bottom: 0;
+    line-height: 26px;
+    border: 1px solid #e1e1e1;
     margin-top: 6px;
-    padding: 0;
+    padding: 5px;
+}
+textarea.customInput:focus {
+    border: 1px solid #eeeeee;
+    padding: 5px;
 }
 .btnSubmitWrap {
     margin: 35px 0 0 0;
