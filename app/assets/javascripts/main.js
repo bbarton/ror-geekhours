@@ -3,6 +3,7 @@ $(document).ready(function() {
 	/*
 	* Plugin intialization
 	*/
+
 	$('#pagepiling').pagepiling({
 		//menu: '#menu',
 		anchors: ['ManyVillagersDontHaveBasicNecessities', 
@@ -28,9 +29,38 @@ $(document).ready(function() {
 	    	if(nextIndex==5){
 	    		$('.downArrow').removeClass('active');
 	    		$('.downArrow').addClass('hideArrow');
+	    		/*$( ".section4 h2.centerHeading").animate({
+		    		top: sot,
+		    		fontSize: fontSize
+		    	},1000);*/
 	    	}
         }
 	});
+
+
+	/*var first = $( ".section4 h2.centerHeading" );
+	var fo = first.offset();
+	var fot = fo.top;
+	var second = $( ".section5 h2.centerHeading" );
+	var fontSize = $( ".section5 h2.centerHeading" ).css('font-size');
+	var so = second.offset();
+	var sot = so.top;
+	console.log(fot);
+	console.log(sot);
+	console.log(fontSize);
+	//$(".section5 h2.centerHeading").clone().prependTo('body');
+
+    setTimeout(function(){
+    	$( ".section4 h2.centerHeading").css({
+    		position:'fixed',
+    		top: fot
+    	});
+    	$( ".section5 h2.centerHeading").css({
+    		position:'fixed',
+    		top: sot
+    	});
+    },1000);*/
+
 	$('.downArrow').click(function(e){
 		e.stopPropagation();
 		e.preventDefault();
