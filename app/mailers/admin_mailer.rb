@@ -5,9 +5,7 @@ class AdminMailer < ActionMailer::Base
     mail(:to =>email, subject: "Webonise Lab : Geek Hours 2015!")
   end
 
-  def send_hall_ticket(user, secondary_users)
-    @user = user
-    @secondary_users = secondary_users
+  def send_hall_ticket(user)
     mail(:to => user.email, subject: "Super Coder: Hall Ticket of Geek Hours 2015!")
   end
 end
